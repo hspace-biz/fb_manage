@@ -1,4 +1,5 @@
 from main_utils.api import Facebook_Account
+from PyQt6 import QtGui
 from ui_code_raw.Facebook_Account_Item import Ui_Facebook_Item
 
 
@@ -20,3 +21,24 @@ class Ui_Facebook_Item_Over(Ui_Facebook_Item):
             str(data.last_time_update_profile))
         self.label_last_time_update_state.setText(
             str(data.last_time_update_state))
+        self.data = data
+        self.set_color()
+
+    def set_color(self):
+        if self.data.state is None:
+            self.__set_color(self.groupBox_item, 50, 50, 10)
+        elif self.data.state != "OK":
+            self.__set_color(self.groupBox_item, 250, 50, 10)
+        else:
+            self.__set_color(self.groupBox_item, 0, 50, 10)
+
+    def __set_color(self, ob, r, g, b):
+        color = QtGui.QColor(r, g, b)
+        alpha = 10
+        values = "{r}, {g}, {b}, {a}".format(r=color.red(),
+                                             g=color.green(),
+                                             b=color.blue(),
+                                             a=alpha
+                                             )
+        ob.setStyleSheet(
+            f"{type(ob).__name__} "+"{ background-color: rgba("+values+"); }")
