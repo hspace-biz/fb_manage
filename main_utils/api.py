@@ -1,9 +1,11 @@
 from typing import List, Tuple
-from main_utils.server_config import Server_Configs
-from main_utils import define
+
 import requests
-from main_utils import file
+
+from main_utils import define, file
 from main_utils.error import error
+from main_utils.server_config import Server_Configs
+
 
 class Facebook_Account:
     def __init__(self, data: dict):
@@ -20,7 +22,12 @@ class Facebook_Account:
         self.cookies = data.get("cookies")
 
 
-def login()->(Tuple[define.ResultType,str]):
+def login() -> (Tuple[define.ResultType, str]):
+    result, _ = check_token()
+    if result == define.ResultBase.OK:
+        
+        return define.ResultBase.OK, "OK"
+
     configs = Server_Configs()
     ip = configs.ip
     port = configs.port
@@ -38,39 +45,38 @@ def login()->(Tuple[define.ResultType,str]):
         for __ip in _ip:
             __ip = int(__ip)
             if __ip < 0 or __ip > 255:
-                return define.ResultBase.THE_IP_NOT_CORRECT,f"0<={__ip}<=255"
+                return define.ResultBase.THE_IP_NOT_CORRECT, f"0<={__ip}<=255"
     except Exception as ex:
-        return define.ResultBase.ERROR_UNKNOW,"Error: {ex}"
-        
+        return define.ResultBase.ERROR_UNKNOW, "Error: {ex}"
+
     url = f"http://{ip}:{port}"
     try:
         res = requests.get(url=url, timeout=10)
     except requests.exceptions.ConnectTimeout as ex:
-        return define.ResultBase.SERVER_TIMEOUT,"Error: {ex}"
+        return define.ResultBase.SERVER_TIMEOUT, "Error: {ex}"
     except Exception as ex:
-        return define.ResultBase.ERROR_UNKNOW,"Error: {ex}"
+        return define.ResultBase.ERROR_UNKNOW, "Error: {ex}"
 
     res = requests.post(url=url+"/login", json=data)
     if res.status_code != 200:
-        return define.ResultBase.LOGIN_FAILED,"Error: {res.text}"
+        return define.ResultBase.LOGIN_FAILED, "Error: {res.text}"
     try:
         res = res.json()
         print(res)
         if res.get("secret_key") is None:
-            return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED,f"secret_key not found"
-            
+            return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED, f"secret_key not found"
+
         if res.get("token") is None:
-            return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED,f"token not found"
-           
+            return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED, f"token not found"
+
         if res.get("token").get("token_type") is None:
-            return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED,f"token_type not found"
-           
+            return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED, f"token_type not found"
+
         if res.get("token").get("access_token") is None:
-            return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED,f"access_token not found"
-            
+            return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED, f"access_token not found"
+
         if res.get("code") is None:
-            return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED,f"ma_tv not found"
-           
+            return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED, f"ma_tv not found"
 
         s_key = res.get("secret_key")
         token = res.get("token").get("token_type")+" " + \
@@ -86,11 +92,35 @@ def login()->(Tuple[define.ResultType,str]):
             "code": code
         }
         file.save_data_configs(data=data)
-        return define.ResultBase.OK,"OK"
+        return define.ResultBase.OK, "OK"
     except Exception as ex:
-        return define.ResultBase.ERROR_UNKNOW,"Error: {ex}"
+        return define.ResultBase.ERROR_UNKNOW, "Error: {ex}"
 
-    
+
+def check_token() -> (Tuple[define.ResultType,  str]):
+    configs = Server_Configs()
+    ip = configs.ip
+    port = configs.port
+    s_key = configs.s_key
+    token = configs.token
+    ma_tv = configs.code
+    api = "check_connection"
+    data = {
+        "ma_tv": ma_tv
+    }
+
+    url = f"http://{ip}:{port}/{api}"
+
+    header = {
+        "Authorization": token,
+        "s-key": s_key
+    }
+
+    res = requests.get(url, json=data, headers=header)
+    print(res.text)
+    if res.status_code == 200:
+        return define.ResultBase.OK, None
+    return define.ResultBase.ERROR_UNKNOW, None
 
 
 def get_list_facebook_account() -> (Tuple[define.ResultType, List[Facebook_Account] | str]):
@@ -124,7 +154,7 @@ def get_list_facebook_account() -> (Tuple[define.ResultType, List[Facebook_Accou
 
         list_account = []
         for _data in data:
-           
+
             fb_account = Facebook_Account(data=_data)
             list_account.append(fb_account)
         return define.ResultBase.OK, list_account
