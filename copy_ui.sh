@@ -1,0 +1,1 @@
+cp /mnt/d/wsl_tran/Import_Cookies.ui ./ui/

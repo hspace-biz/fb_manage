@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Import_Cookie</class>
+ <widget class="QMainWindow" name="Import_Cookie">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>656</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Import Cookie</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>780</width>
+         <height>335</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QGroupBox" name="groupBox_list_cookie">
+          <property name="title">
+           <string>List cookie</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_list_cookie"/>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Selected:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_count_check">
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <italic>true</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Remove_Item_Selected">
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Remove item checked</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_CheckAll">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Check All</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_UncheckAll">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Uncheck All</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_import_cookie">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Times New Roman'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;table border=&quot;1&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=hRPyYYdO-qDS7SGLZqDEywzP; wd=1920x929; datr=hRPyYcTSL2XF91GXmt7WjRTC; c_user=100077556335947; xs=48:rkl2Zgg--XIEbg:2:1643254667:-1:-1; fr=00zlDWP9tN9s6XgNn.AWVs2THmAvuubfRhxx22wksyIiY.Bh8hOF.JT.AAA.0.0.Bh8hOK.AWW3EPJgkzI; spin=r.1004983821_b.trunk_t.1643254673_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643254678442,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=FXhFYHQTVyktduDs5du7eG_I;datr=FXhFYOW4kC8XIMRwZ1VAcCXK;c_user=100005390856275;xs=35%3AvBtWr0tQPlSBGQ%3A2%3A1631012370%3A-1%3A6165%3A%3AAcX9Ylme--KL641mdRUnEYlRgXkGJsrSdxopgzr3cXbX;fr=0TT2JiEUOAbbFlpO2.AWW1p7xj1AjonEyMBJaGeyMKk6M.Bh5uBO.Zm.AAA.0.0.Bh5uBO.AWVCWJ2cIEU;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=_xLyYaZ7I2avVNfS1C0kyMDH; wd=1920x929; datr=_xLyYXe-i4Gt6c85dcOCxD0m; c_user=100077462745238; xs=25:MCQ3739x9qIW3w:2:1643254554:-1:-1; fr=0W1njVPqWrwrtVZMt.AWVrddivdN7DxryJBCcR2kj8h80.Bh8hL_.aX.AAA.0.0.Bh8hMa.AWXGWVPqsXw; spin=r.1004983821_b.trunk_t.1643254559_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643254564826,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=70LyYe4VYj7dOCoi9akLKMPs; wd=1920x961; datr=70LyYVMjlNr5b7NYuZOuVRZ-; c_user=100077558526906; xs=22:5cGJ6W0dgl7qJQ:2:1643266808:-1:-1; fr=0HRYMMTQhRRYA2RfZ.AWW98knYodepyJD7M4A_gFlLORk.Bh8kLv.Gn.AAA.0.0.Bh8kL3.AWUZ288TYY4; spin=r.1004983821_b.trunk_t.1643266811_s.1_v.2_&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;datr=aaPzYbYuG6_4WmHauJfUtGvK; sb=gaPzYSVnLKQOl9ILQ9i7BGvn; c_user=100077452996750; xs=32:mFerOsmGRu-oPg:2:1643357057:-1:-1; fr=07SS8myqfya0pPGEj.AWWBeBM37hm9pUFJuzHvWJIpxDk.Bh86OB.bA.AAA.0.0.Bh86OB.AWUgMz5_xIM; spin=r.1004991789_b.trunk_t.1643357064_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643357066722,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=O1LzYeZf9Umt6GSxS0gEwfGM; wd=1920x961; datr=O1LzYa6rCklHziZuz0v7sDZ1; c_user=100077351331976; xs=19:Fg0yYDhKk8IwGg:2:1643336326:-1:-1; fr=0ElLPD8qDdYL0a5Ye.AWXMaXpDsqxma_MAGwGiirQJso0.Bh81I7.PZ.AAA.0.0.Bh81KF.AWXryjNstSg; spin=r.1004990280_b.trunk_t.1643336331_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643336335513,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=d8LwYaFIDzhaK0F2D5ixmWde; datr=fcLwYQPHaURZK1BOlFjIMDOb; wd=1920x969; locale=en_GB; c_user=100077784811062; spin=r.1004990280_b.trunk_t.1643338199_s.1_v.2_; xs=4:wIyXuRV-zCIB3g:2:1643168422:-1:-1::AcUGmQ8RMSnfMc_wftO2FT8GVAH-BhOVjNHHlV0_7Q; fr=0kIR5oaGWjXyy3Pke.AWUc_vsSNAckPicgYm0PduBjOOU.Bh81nX.kl.AAA.0.0.Bh81nX.AWXQuPMVDIU; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643338199140,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=_MfwYS1MiEp6uVL_KYA5rUc5; wd=929x932; datr=PMjwYSZ1PtaBCmq87YabTs7u; locale=vi_VN; c_user=100077416398596; spin=r.1004990280_b.trunk_t.1643338825_s.1_v.2_; xs=24:znD8wAx2XxEo7g:2:1643169909:-1:-1::AcXrHxYE05cxOC-DHurWnvgJ_7Jpg3Lr_Ap9iMrr_w; fr=0FyNsqGxJVqN5NgGb.AWUR1-5oxyKQ9S67rE-5hqADB10.Bh81xK.WW.AAA.0.0.Bh81xK.AWVU3oyCmO8; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643338824933,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=7lHyYbJG0iLSF-Z88_rdD1hJ; wd=1920x916; datr=7lHyYY2uZlLHWIxnmiAQ19HJ; c_user=100077528683190; xs=25:8mlTrOF-KtPUPQ:2:1643270646:-1:-1; fr=0MD4GCWjNYe8kh7rO.AWVRf5ZXCZ0oxAOKiiq9goInC-o.Bh8lHu.sF.AAA.0.0.Bh8lH1.AWUVDqK9QkU; spin=r.1004986271_b.trunk_t.1643270651_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643270657320,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=3UHzYafsDOpcbOjpQOIF8WyS; datr=4EHzYRoUr3lpWd0lh04jwdQl; wd=1920x969; locale=vi_VN; c_user=100077680328006; spin=r.1004989999_b.trunk_t.1643332123_s.1_v.2_; xs=11:9smBVadK2-EpkQ:2:1643332120:-1:-1::AcVzs-yMHqGL4EbqauitbWdCo-la1APVUbRNUWVNRw; fr=0BqLLg8REZV8n2ODC.AWUDJ4Vhmd2uwW3OUS0xTZsWtA4.Bh81iM.1c.AAA.0.0.Bh81iM.AWVJ8aYJSTI; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643337872390,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=EKHzYVd2hqdp9nnRAYa__kwL; wd=1366x625; datr=EKHzYVQt0gz3Vc4NLE4IaXsx; locale=vi_VN; c_user=100077574012996; xs=27:sV-1yMnSC7JAcA:2:1643356515:-1:-1; fr=0hajKiQttx1cSEFSp.AWUBpU7VJP_pUIu2un2GE0zVXTE.Bh86EQ.x9.AAA.0.0.Bh86Fi.AWU6emkTGJk; spin=r.1004991789_b.trunk_t.1643356522_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643356505054,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=9MrOXwLh_xJ7nLhasmQSQa_K; datr=9MrOX0gEGgnxOC6Bp6G3FFr2; wd=1366x623; c_user=100077605479214; xs=37:yZUDZkQtRMtsew:2:1643356644:-1:-1; fr=0z4Qjajv11zJhbEkL.AWU_CvSU3eMxTpIJpLPHCXdTvE4.BhlvQ1.qJ.AAA.0.0.Bh86Hk.AWXyUW3HeEk; spin=r.1004991789_b.trunk_t.1643356648_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643356634882,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=2EzzYYG59Bee_yxTk79Yv6Eq; wd=929x932; datr=2kzzYSOX5khrTgdT31LKUdRy; locale=en_GB; c_user=100077603889091; xs=18:xdN36P33ODeyWQ:2:1643335156:-1:-1; fr=0DqKqMqE66LoSUtMH.AWV2SLTjQAM70PCkIOApdDLO67M.Bh80zY.o7.AAA.0.0.Bh803u.AWWSxae6L4w; spin=r.1004990280_b.trunk_t.1643335159_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643337737788,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=FpzzYaqRBgSWL2H4MiuGIzqA; wd=1920x969; datr=FpzzYS8wd2olTADhgEGLuL4B; locale=en_GB; c_user=100077378153501; xs=36:P_W9MnVpjTNgcA:2:1643357720:-1:-1; fr=0UteRmsEQruKKJyXP.AWVrYpValnkKtDyRbRYPS8tKKOc.Bh85wW.-W.AAA.0.0.Bh86YU.AWWUYNMJ_z8; spin=r.1004991789_b.trunk_t.1643357723_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643357987155,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=Va3zYYCEgIIWCYbDxrpeR0zh; datr=V63zYU6S_CqkPf4yRR21S6Lh; locale=vi_VN; wd=1365x969; c_user=100077326706153; xs=21:0PVudR8y5OSLSg:2:1643360039:-1:-1; fr=0acxVtrMXm5YF0l76.AWVncVZx-K_9BivvJoYA8ZIhJHI.Bh861V.42.AAA.0.0.Bh868m.AWWen9M8Hs0; spin=r.1004992367_b.trunk_t.1643360042_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643360045454,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#ea4335;&quot;&gt;sb=Va3zYYCEgIIWCYbDxrpeR0zh; wd=1920x969; datr=V63zYU6S_CqkPf4yRR21S6Lh; locale=vi_VN; c_user=100077498027042; xs=2:aNRlwLJRgdpJKQ:2:1643359624:-1:-1; fr=0acxVtrMXm5YF0l76.AWXegkTYV6pN9wuuT6ok66x2Mp4.Bh861V.42.AAA.0.0.Bh862C.AWX0ZEY0FRg; spin=r.1004992367_b.trunk_t.1643359627_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643359831346,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=H7DzYRl-34HhcEOrwpHS3M2E; wd=1920x969; datr=H7DzYWElcFNAWQLyNMdnNdJ5; locale=en_GB; c_user=100077562644008; xs=27:M9sv0mKsbhE7NQ:2:1643360463:-1:-1; fr=0UIc1GOWSIEb4Br9e.AWUQWZwmt7-PPUgLSYdyPYVK_Vs.Bh87Af.ym.AAA.0.0.Bh87DK.AWVyeO2Hg2o; spin=r.1004992367_b.trunk_t.1643360466_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643360604134,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#ea4335;&quot;&gt;sb=SLPzYeoMiYn3K9THfm2HIZGa; wd=929x932; datr=SrPzYW_8mbKrxTAwubuFRfso; locale=vi_VN; c_user=100077487257598; xs=48:1kUUtcQLP42xiA:2:1643361178:-1:-1; fr=0pJ1O1BtU6ZyQZmkb.AWVbebq9MnXfpKxoyXOLUWJo83M.Bh87NI.f4.AAA.0.0.Bh87OY.AWUgt1IvPYI; spin=r.1004992367_b.trunk_t.1643361182_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643361646938,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=i7bzYbKwuzk4DpzR_P-6AMtG; wd=1920x969; datr=i7bzYbHicFhB5uRDHw6SEOO6; locale=en_GB; c_user=100077668718806; xs=3:LkaPUepMJl4fVQ:2:1643361983:-1:-1; fr=0Y7MUrZVCBEZEimg8.AWUZRKxN3z1wmHetAAvbCJ3sKk4.Bh87aL.hT.AAA.0.0.Bh87a7.AWXy-gpFStc; spin=r.1004992367_b.trunk_t.1643361986_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643362233808,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=BrrzYRVSKS54dkhRqlAsRnqJ; wd=929x932; datr=CLrzYfRV9c3UKEn2Xm8r9FUu; locale=vi_VN; c_user=100077556129559; xs=48:mTmB6ZVLD80yoQ:2:1643362876:-1:-1; fr=08JGDJJdJ45kl8Qgo.AWVKVi8ZOxR6lkuGWPdcdhuAb1k.Bh87oG.Ag.AAA.0.0.Bh87o4.AWUvM7p9T5k; spin=r.1004992367_b.trunk_t.1643362879_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643363346844,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=Rb3zYYApmqqmkQklA7N9wh5E; wd=929x932; datr=Rr3zYbzp3-wwY_1L9lbiInR1; locale=en_GB; c_user=100077500907104; xs=30:1QrttC--fCZclA:2:1643363725:-1:-1; fr=01yFRqP5wcbEuVfTQ.AWVGd4JRXUgM9IU67ldloOMgBr0.Bh871F.Vk.AAA.0.0.Bh872J.AWXsOIKa39k; spin=r.1004992507_b.trunk_t.1643363728_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643363992331,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=c8HzYZdEJIi3VFoMJR2lpZ1a; datr=c8HzYaHETYS96ucO6ZWq_pDE; wd=929x932; locale=en_GB; c_user=100077294774892; xs=41:EOb534zYO71o7g:2:1643364804:-1:-1; fr=0hHAeo0mvzaWXDde6.AWUxNlSm26w99kBjFf7VZBEkf50.Bh88Fz.-4.AAA.0.0.Bh88G_.AWXUr9KsRWk; spin=r.1004992507_b.trunk_t.1643364807_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643365194077,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=YJ_0YaZsl6ttHtfHPDmU39hO; wd=1920x969; datr=Y5_0YeI-EA_uu2RT3sXy2WHM; locale=en_GB; c_user=100077294565768; xs=16:FMGyjoo3qj2QiQ:2:1643421587:-1:-1; fr=0vN9qaIX271LsoI8S.AWUUGN_xnOCUrvJxf0p0ReEPQbg.Bh9J9g.Wj.AAA.0.0.Bh9J-N.AWWTv57QO5c; spin=r.1004996417_b.trunk_t.1643421590_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643422186726,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=NqP0YZR9wP56qIKRZvbjzp_6; wd=1920x969; datr=NqP0Yc5DjMd7h2CDR90Gs2sp; locale=vi_VN; c_user=100077638091194; xs=1:D5-PkUNsSRMhFA:2:1643422976:-1:-1; fr=0UNVr8m9KXvP8Uck0.AWUt8OmDQO4-3hUga1ZIGIVbhFI.Bh9KM2.xH.AAA.0.0.Bh9KT6.AWV54uHJYuA; spin=r.1004996417_b.trunk_t.1643422979_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643423323615,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=Oqj0YSCt0O40MO7b7vil8DkM; wd=929x932; datr=Pqj0YT5CpXVvVTklf0IWICpG; locale=vi_VN; c_user=100077792974416; xs=41:DgmQ53WyNaYKeg:2:1643423857:-1:-1; fr=0PsLSIBumDt95FkJR.AWW32aNShldEHsIHnQ7NSq2dl7s.Bh9Kg6.NW.AAA.0.0.Bh9Khv.AWXZhmghW2E; spin=r.1004996417_b.trunk_t.1643423860_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643424215377,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=ILH0YQndE6-oU2m8zxOsjBwH; wd=1920x963; datr=ILH0YSMIVpInIQQVrKYW9Ibk; locale=vi_VN; c_user=100077518067254; xs=15:MXVjSBHNJ8WtzA:2:1643426240:-1:-1; fr=01uydlpuQx5Ns7cjL.AWWqQMjiMilVXkUuUFrX-IYUa4c.Bh9LEg.xy.AAA.0.0.Bh9LG9.AWUnW_056uU; spin=r.1004996916_b.trunk_t.1643426242_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643426831033,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=MLf0YaM1jxeA68ZFezu8i4QM; wd=929x932; datr=Mbf0YVFONoACZS6hXrwFH5CO; locale=en_GB; c_user=100077683239015; xs=3:ikMnw83_c66fow:2:1643427677:-1:-1; fr=0aOdiA823nd8aIQr6.AWWmXvPaKPxvRImbPYQFY36PA7U.Bh9Lcw.8u.AAA.0.0.Bh9LdZ.AWUhpcScxZs; spin=r.1004996916_b.trunk_t.1643427680_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643428078103,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=W7v0Yasg36LeKseedjHCzEzg; wd=929x932; datr=XLv0YU-9NL9vh2_zwINg2kY3; locale=vi_VN; c_user=100077724787039; xs=8:rEJJ3k0lgZdHbA:2:1643428744:-1:-1; fr=0Rsw5oC6X1UDOsS4E.AWW_4jehX2KavLlfJ9d30gnBXrk.Bh9Ltb.Ct.AAA.0.0.Bh9LuE.AWV3cWWILT4; spin=r.1004996916_b.trunk_t.1643428747_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643429108079,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=LcD0YZ-3IgurKbEmElTT0bLA; wd=1920x963; datr=LcD0YXwpxpsqFk2EP3KMNeAn; locale=vi_VN; c_user=100077385114017; xs=25:Xl13Nv4kEOwcIQ:2:1643430060:-1:-1; fr=0uYxJyobleqUCfGDQ.AWU-h49MKtXmvtoI5TQfypvsZ_o.Bh9MAt.gj.AAA.0.0.Bh9MCp.AWXLm_C4Mjs; spin=r.1004996916_b.trunk_t.1643430062_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643430417954,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=_HexYQdv9aNfxyIU92JQby7I; datr=_nexYS_Xqtw-7hPINyxind9G; locale=vi_VN; usida=eyJ2ZXIiOjEsImlkIjoiQXI2YWx3Z3F1dTloMSIsInRpbWUiOjE2NDMxNTkzOTJ9; wd=1032x927; c_user=100077378964504; xs=33:MbjKBRWQgwEyxw:2:1643440486:-1:-1; fr=0eqEQC1SVN4wsTrrk.AWUyFcDyEzh9dsMjHl2am-6XNws.Bh85pK.tM.AAA.0.0.Bh9Oli.AWXnUvS_kfE; spin=r.1004997578_b.trunk_t.1643440488_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643440797005,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=W-30YSxq0TdSwR7yoFQk3l4K; wd=1920x963; datr=W-30YeoDVxJl9fWisu10wF-k; locale=vi_VN; c_user=100077694848715; xs=44:XFmCbsvIDpa3Ow:2:1643441622:-1:-1; fr=0WwJb7vpGWAdB6ZGJ.AWXG_KdCxnugwueKPb_yBNVp1s4.Bh9O1b.Hg.AAA.0.0.Bh9O3S.AWXf0rRGHic; spin=r.1004997578_b.trunk_t.1643441625_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643442198337,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=jPL0YfS3-TeOkOBbDOo28S8Z; wd=929x932; datr=jfL0YUcqaMR-9t0v-uLqzJ_4; locale=en_GB; c_user=100077557570651; xs=5:BUpPZ_2VkIZ4PA:2:1643442878:-1:-1; fr=0vCOooNjmIFEo9z2W.AWWOeFhj2AfRGw3Tlqv7TtduXUM.Bh9PKM.Wz.AAA.0.0.Bh9PK5.AWXsxJC7sps; spin=r.1004997578_b.trunk_t.1643442881_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643443323419,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=zvX0YRYAqtj3ElCYHEzu7fnt; datr=zvX0Yd9ZG_y9nselwbJo4EnB; wd=951x931; locale=vi_VN; c_user=100077643761234; xs=7:MWkCNrYO_IIHYA:2:1643444063:-1:-1; fr=09RZmdNCqIsCeEZr3.AWVmingeS03pc6NP3IBtBugug_E.Bh9PXO.5C.AAA.0.0.Bh9Pdb.AWXwmRzzyYQ; spin=r.1004997578_b.trunk_t.1643444067_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643444307386,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=gfr0YWDJkr0E8384_lLng3N4; wd=1920x963; datr=gfr0YZimetsTNtBWLV0Jp4j_; locale=vi_VN; c_user=100077676399796; spin=r.1004997578_b.trunk_t.1643445185_s.1_v.2_; xs=47:Q7eQrSZWBDcWxg:2:1643445443:-1:-1; fr=0Wj3YBhGq8iGD08AK.AWWY4LrnDnktn5UURWDEjdROsGM.Bh9PqB.wp.AAA.0.0.Bh9PzB.AWW5gikTZ6E; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643445477062,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=SP70YS0njnW6LLb9YM4buCJ9; wd=929x932; datr=Sf70YUs3lVEjz3THnYK6sdJb; locale=en_GB; c_user=100077724217363; xs=39:3bQAuBthTRt_6g:2:1643445879:-1:-1; fr=0s17QWHdsQPye7nHf.AWX9B--wE92zcomRbT_VYMuDpcY.Bh9P5I.fg.AAA.0.0.Bh9P50.AWUS20B8PsU; spin=r.1004997578_b.trunk_t.1643445881_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643448000651,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=BAj1YUf9meUtCPGtJA507vRA; wd=1920x969; datr=BAj1YZyYaiwZxUgyZfBhemxx; locale=en_GB; c_user=100077632151787; xs=46:EImKX7WuWzUfoQ:2:1643448369:-1:-1; fr=0JkFqlW6ayCGd0xbN.AWWtWOdPBsvfYr60W8VusYePyyE.Bh9QgE.xT.AAA.0.0.Bh9Qgv.AWUmckJG2hY; spin=r.1004997685_b.trunk_t.1643448372_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643449059917,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=Jwz1YR89mwoiHZ6Hc-h1FMy0; wd=951x931; datr=Jwz1YeLJTiYWT4KSWK_c-Jfq; locale=vi_VN; c_user=100077446461013; spin=r.1004997685_b.trunk_t.1643449501_s.1_v.2_; xs=18:CEp7a-4_BC3hoQ:2:1643449745:-1:-1; fr=0zSLz10oroSyJrOWN.AWVIqs8K5UwNe2D5mudC9MXki3w.Bh9Qwn.AG.AAA.0.0.Bh9Q2O.AWWccgQs9SU; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643449811578,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=khD1YbNm4WElndFC5kxf_BeH; wd=929x932; datr=lhD1YV7Uc9hl9j0wWTvNKv8s; locale=en_GB; c_user=100077562975048; xs=48:dLISzfkpIj3GZA:2:1643450559:-1:-1; fr=0h5W4eQtUh8ttO85E.AWV62aozXDkp-xcCUOQT1viKcW0.Bh9RCS.nd.AAA.0.0.Bh9RC7.AWUkZVT42Dk; spin=r.1004997685_b.trunk_t.1643450562_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643450729596,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=5g_1YXqiiRgRmM-0chy_eMmW; wd=1920x963; datr=5g_1Yffah5UCKnXTCHwg7THI; c_user=100028662553605; xs=19:MOxGvnq-xEPqwA:2:1643450374:-1:6168; fr=0xxsh0WcfIxWGPqbU.AWUDPyqVY2MbKa-z_yPu14XW9Ls.Bh9Q_m.it.AAA.0.0.Bh9RAF.AWUtv6_x4vM; spin=r.1004997685_b.trunk_t.1643450381_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643450385681,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=i4_0YY6l5YfOBy8dYj_pBzi6; wd=860x931; datr=i4_0YWqTh9mBS-vWW8nrquvp; c_user=100059480956482; xs=28:_oMkDfx6O50utQ:2:1643417517:-1:6269; fr=04rgE7IdELOuOhpxu.AWUieBLArIXtN822eqC6u3WGaCM.Bh9I-L.ZF.AAA.0.0.Bh9I-t.AWWpi6MpbrI; spin=r.1004994708_b.trunk_t.1643417524_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643417537571,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=KJD0YXADWsyoGbO7AVg5g4u1; wd=1920x963; datr=KJD0YSSAa2ARr7QtELY35wN8; c_user=100036002589483; xs=21:NqKFJ_NDAaiP1A:2:1643417674:-1:6264; fr=0yMbrBvJLEarRKmVc.AWVvlmSj8yJRM832xCbHeo1fi_8.Bh9JAo.Eu.AAA.0.0.Bh9JBJ.AWVXm7jtewo; spin=r.1004994708_b.trunk_t.1643417680_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643417681462,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=TJH0YfRdMlF5yHEcjYTLasDv; wd=1920x963; datr=TJH0YWmwm1KNQpIVBfBhipeS; c_user=100035978980619; xs=27:94PFL8cQT8lKbQ:2:1643417974:-1:6264; fr=0zYThpmZi97f2zD0g.AWWo2hbKAlgmmwzNF9LVFfjjmxs.Bh9JFM.a6.AAA.0.0.Bh9JF1.AWW_LaL1cwE; spin=r.1004994708_b.trunk_t.1643417976_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643418060952,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:bottom; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=WJL0YZVkjrq0iJ8MToXfO1LM; wd=1920x963; datr=WJL0YTVFwxo4XuAqBZCzD7px; c_user=100037054454542; xs=23:kPkX43OmnKnmsg:2:1643418273:-1:6168; fr=0CFK3D5Svp60JDtPc.AWX2cu98g7u2y-p67rcm_N-fGi0.Bh9JJY.Zy.AAA.0.0.Bh9JKh.AWUhLMe9XxU; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643418275866,&amp;quot;v&amp;quot;:1}; spin=r.1004994708_b.trunk_t.1643418279_s.1_v.2_&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=OpP0YSkHtbzZwDoZWPQecwy3; wd=1920x963; datr=OpP0YZLCmUn3FB0-CSu0f2yX; c_user=100037183172910; xs=28:IudMUmGH6wC7mQ:2:1643418437:-1:6166; fr=0HzTteiS2KuGHwqYf.AWU7eOAGktyjyIfvAiKrl9ZSwMo.Bh9JM6.zw.AAA.0.0.Bh9JNF.AWXfKW3NHPM; spin=r.1004994708_b.trunk_t.1643418444_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643418441390,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=xJP0YWgjA9gVxNdlgtA27G23; wd=1920x963; datr=xJP0YRaTKxNJGTyXv2S7fnbf; c_user=100075035110795; xs=13:6Ij6Mb3qhoRjpg:2:1643418725:-1:-1; fr=0KsDG5VItiZytU3nN.AWXIiu5qSLtU-6c5X85zVQM31jE.Bh9JPE.GD.AAA.0.0.Bh9JRk.AWXu_ho9GMg; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643418729268,&amp;quot;v&amp;quot;:1}; spin=r.1004994708_b.trunk_t.1643418732_s.1_v.2_&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=S5X0YaG_ECTlp6X-zQLDsc3z; wd=1920x963; datr=S5X0YTxpOJbTOceEOaYa3xIh; c_user=100075330270537; xs=4:b7fCovFRu46owA:2:1643418963:-1:-1; fr=0YWdmwytJpHAFPGC8.AWVuSr9bSSGYezm-tCYUSWqeCMM.Bh9JVL.h5.AAA.0.0.Bh9JVS.AWXkv_MzgX0; spin=r.1004994708_b.trunk_t.1643418969_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643418992730,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=CJb0YbYPgLUQfYHukBMX_t3-; wd=1920x963; datr=CJb0YaYgwkk-4fKWBzZG8oC8; c_user=100059214068012; xs=25:WUufSR0f6oIYXg:2:1643419158:-1:6264; fr=057p5CbliPg4TZIOR.AWWDzZz3kecnYO06iq8E2j-kWE4.Bh9JYI.mW.AAA.0.0.Bh9JYV.AWWnsg82zDQ; spin=r.1004994708_b.trunk_t.1643419164_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643419185054,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#00ff00;&quot;&gt;sb=sJb0YTPUgbf44sg7Sl5P4mg5; wd=1920x963; datr=sJb0YSSF5JMLlpKpya8FSFhk; c_user=100059254387100; xs=33:cnj5L5pKo3Iw6g:2:1643419332:-1:6397; fr=0HtIxx04kdxNSHnUN.AWUhv-jw6_nrPSdFC9ur3qf3OpI.Bh9Jaw.Lq.AAA.0.0.Bh9JbD.AWV8g95Ei-o; spin=r.1004994708_b.trunk_t.1643419338_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643419336287,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600;&quot;&gt;sb=NZf0YYqTkqLPFMm5iNQTp1GU; wd=1920x963; datr=NZf0Yf_PiTOTMkipwv5c7Qoj; c_user=100059242367332; xs=37:9BqaFRO2Oyk9Xg:2:1643419462:-1:6264; fr=0qxPuAAIiLYQazScq.AWWIRihU-ujEmUhP35zlAHESVTM.Bh9Jc1.4x.AAA.0.0.Bh9JdF.AWXNoh4hMAE; spin=r.1004994708_b.trunk_t.1643419469_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643419467419,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#00ff00;&quot;&gt;sb=oZf0YQtfiIuHQxHFCDHI5yY3; wd=1920x963; datr=oZf0YarGCCMa6c16SImePMXj; c_user=100059585701741; xs=17:2l3lMq11JZmSeg:2:1643419567:-1:6264; fr=00iiYSqHSUWESqlJd.AWWsExPhFjAd2Gv88FVtmb1U37o.Bh9Jeh.t9.AAA.0.0.Bh9Jeu.AWUVZnfmyLQ; spin=r.1004994708_b.trunk_t.1643419575_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643419591167,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#00ff00;&quot;&gt;sb=PJj0YXDGdyw5Q7SrS6Vzpz6r; wd=1920x963; datr=PJj0YVXgxDb7lOwkmZYsKJ4Q; c_user=100059227009035; xs=4:J_j1S599N3_Ekg:2:1643419725:-1:6264; fr=0WVGcMaDUZxCTlyed.AWWVrT5h_Q16ldzgWjG3kaUrIWY.Bh9Jg8.-S.AAA.0.0.Bh9JhM.AWW-8A6yKsg; spin=r.1004994708_b.trunk_t.1643419731_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643419746391,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#00ff00;&quot;&gt;sb=6Jj0YSPjn0pvs32zarYMkJRI; wd=1920x963; datr=6Jj0YVNGTP5ydXOZnT-1MGxi; c_user=100059562996741; xs=38:6iZlm76x_i79OQ:2:1643419893:-1:6152; fr=0E5r9Li7dQxRIwaRD.AWXO3Qu44e8bQwDEnvrJB-Gj990.Bh9Jjo.Ns.AAA.0.0.Bh9Jj0.AWV-40o8MG4; spin=r.1004994708_b.trunk_t.1643419900_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643419938921,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#00ff00;&quot;&gt;sb=7Jn0YbZQJ6arW1WkL7HuozUv; wd=1920x963; datr=7Jn0YT0mEXajZC4DAmqDyyro; c_user=100027640488517; xs=1:lmFCpImEfdfUEg:2:1643420153:-1:6168; fr=0DQO5TCosUl9nqOdr.AWVUaZE7Gm56Rk6DpQ2jTimFxTI.Bh9Jns.Gx.AAA.0.0.Bh9Jn4.AWWVvUhobDk; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643420160020,&amp;quot;v&amp;quot;:1}; spin=r.1004994708_b.trunk_t.1643420163_s.1_v.2_&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#00ff00;&quot;&gt;sb=Spr0YWys5nNX_QBU1pM_OQti; wd=1920x963; datr=Spr0YRjc3Ku7sSw_lBN7cFb7; c_user=100036187597305; xs=17:pXIwm66nSo1YUg:2:1643420251:-1:6168; fr=0hf574jSFWEr1NjnW.AWWelHIMxDnBvrjuezwPCvn4iyE.Bh9JpK.DV.AAA.0.0.Bh9Jpa.AWXxfzKPHvA; spin=r.1004994708_b.trunk_t.1643420253_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643420420310,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#00ff00;&quot;&gt;sb=UA_1YQP-WKKL-_wfksT7d9VU; wd=1920x963; datr=UA_1YfR3wvQ5W01LLKrh39xh; c_user=100027758229804; xs=44:1g1TnYKgLAWYbQ:2:1643450216:-1:6168; fr=09tQzzWip291kc8T3.AWXpGApfeCq1EoCJcM6miGuXE6Y.Bh9Q9Q.EO.AAA.0.0.Bh9Q9n.AWVmMECNuVc; spin=r.1004997685_b.trunk_t.1643450222_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643450234129,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#00ff00;&quot;&gt;sb=5g_1YXqiiRgRmM-0chy_eMmW; wd=1920x963; datr=5g_1Yffah5UCKnXTCHwg7THI; c_user=100028662553605; xs=19:MOxGvnq-xEPqwA:2:1643450374:-1:6168; fr=0xxsh0WcfIxWGPqbU.AWUDPyqVY2MbKa-z_yPu14XW9Ls.Bh9Q_m.it.AAA.0.0.Bh9RAF.AWUtv6_x4vM; spin=r.1004997685_b.trunk_t.1643450381_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643450385681,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#00ff00;&quot;&gt;sb=SRT1YVcfF5AumTl4SaQVKiOs; wd=1920x969; datr=SRT1YaXLIOmOnRRlpYSj90Ke; c_user=100036980721927; xs=9:J-2_1HLQtx7O8A:2:1643451479:-1:6171; fr=05gjst1QqYTYZxsdb.AWUHxz1KD2skldjiIH2p5slU0W8.Bh9RRJ.oP.AAA.0.0.Bh9RRX.AWUx3vOoWDg; spin=r.1004997685_b.trunk_t.1643451487_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643451488247,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#00ff00;&quot;&gt;sb=thT1YU0rHQm8TLe-6DqDZ6FJ; wd=1920x963; datr=thT1Ye1b9H8T6S3tBfoSAn0c; c_user=100045259670183; xs=21:3WuzR91mU8nCqg:2:1643451587:-1:6267; fr=0VJSipPRG6SsVhrDq.AWWvAjQ48Y1Ewf8xQ7U6KwPqIYc.Bh9RS2.cA.AAA.0.0.Bh9RTC.AWWJgPda9P8; spin=r.1004997685_b.trunk_t.1643451594_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643451599144,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#00ff00;&quot;&gt;sb=GBX1YfbOgZCKoXvknJ4DZGlc; wd=1920x969; datr=GBX1YRM33IlpIMtJzoE6kuoe; c_user=100035636949437; xs=42:9humGQCBFfAKGQ:2:1643451743:-1:6291; fr=0RoyivB9uLcpFqDx3.AWWObtl0C1BQLXX3xFJm_rcJG4E.Bh9RUY.4w.AAA.0.0.Bh9RVe.AWUTYseVW9A; spin=r.1004997685_b.trunk_t.1643451749_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643451752186,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-weight:600; color:#00ff00;&quot;&gt;sb=wRX1YXPf0qWAWdEueXNk1gpA; wd=1920x963; datr=wRX1YbwWLkyNeFR85pz_YdJY; c_user=100035571584027; xs=34:HRuQzag1gpFZPw:2:1643451855:-1:7584; fr=01RQ3efANLcPFOScu.AWU8rvSpgoJ-saALCpi0WxGwebc.Bh9RXB.is.AAA.0.0.Bh9RXO.AWUKVfaOoJs; spin=r.1004997685_b.trunk_t.1643451862_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643451891589,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot; vertical-align:middle; padding-left:3; padding-right:3; padding-top:2; padding-bottom:2;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Enter Your Cookies.</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Count Cookies:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_count_cookie">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <italic>true</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_result">
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <italic>true</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_Update_when_exists">
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Update when exists</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Insert">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Insert to DB</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Check_Cookie">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Check Cookie</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSetting">
+    <property name="title">
+     <string>Setting</string>
+    </property>
+    <addaction name="actionConfig"/>
+   </widget>
+   <widget class="QMenu" name="menuTool">
+    <property name="title">
+     <string>Tool</string>
+    </property>
+    <addaction name="actionProxy_Manager"/>
+    <addaction name="actionFacebook_Account_Manager"/>
+    <addaction name="actionImport_proxy"/>
+   </widget>
+   <addaction name="menuSetting"/>
+   <addaction name="menuTool"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionConfig">
+   <property name="text">
+    <string>Config</string>
+   </property>
+  </action>
+  <action name="actionProxy_Manager">
+   <property name="text">
+    <string>Proxy Manager</string>
+   </property>
+  </action>
+  <action name="actionFacebook_Account_Manager">
+   <property name="text">
+    <string>Facebook Account Manager</string>
+   </property>
+  </action>
+  <action name="actionImport_proxy">
+   <property name="text">
+    <string>Import proxy</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
