@@ -1,6 +1,7 @@
 from ui_code_raw.Config_Window import Ui_Config
 import requests
 from main_utils import file
+from PyQt6 import QtGui
 
 class Ui_Config_Over(Ui_Config):
     def setupUi(self, Config):

@@ -9,7 +9,7 @@ from ui_code_raw.Proxy_Item import Ui_Proxy_Item
 
 
 class Ui_Proxy_Item_Over(Ui_Proxy_Item):
-    def __init__(self, 
+    def __init__(self,
                  proxy_str: str = None,
                  proxy_ip: str = None, proxy_port: str = None,
                  proxy_username: str = None, proxy_password: str = None

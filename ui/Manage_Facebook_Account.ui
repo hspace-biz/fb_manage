@@ -123,8 +123,20 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuConfigs">
+    <property name="title">
+     <string>Configs</string>
+    </property>
+    <addaction name="actionConfigs_Authentication"/>
+   </widget>
+   <addaction name="menuConfigs"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionConfigs_Authentication">
+   <property name="text">
+    <string>Configs Authentication</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
