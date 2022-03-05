@@ -26,7 +26,14 @@
          <property name="title">
           <string>Filter by uid</string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QCheckBox" name="checkBox_filter_uid">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
           <item>
            <widget class="QLineEdit" name="lineEdit_filter_uid">
             <property name="placeholderText">
@@ -42,7 +49,14 @@
          <property name="title">
           <string>Filter by name</string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_5">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QCheckBox" name="checkBox_filter_name">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
           <item>
            <widget class="QLineEdit" name="lineEdit_filter_name">
             <property name="placeholderText">
@@ -58,7 +72,14 @@
          <property name="title">
           <string>Filter by State</string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_6">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QCheckBox" name="checkBox_filter_state">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
           <item>
            <widget class="QComboBox" name="comboBox_filter_state">
             <property name="minimumSize">
@@ -93,11 +114,55 @@
          <x>0</x>
          <y>0</y>
          <width>780</width>
-         <height>390</height>
+         <height>210</height>
         </rect>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_list_facebook_account"/>
+       <layout class="QVBoxLayout" name="verticalLayout_list_facebook_account">
+        <item>
+         <widget class="QTableWidget" name="tableWidget_list_account">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_statistics">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>statistics</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QScrollArea" name="scrollArea_state">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_statistics">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>760</width>
+            <height>139</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_statistics"/>
+         </widget>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
     <item>
@@ -157,7 +222,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="pushButton_Reload">
          <property name="maximumSize">
           <size>
            <width>50</width>

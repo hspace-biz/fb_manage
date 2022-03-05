@@ -25,8 +25,10 @@ class Facebook_Account:
 def login() -> (Tuple[define.ResultType, str]):
     result, _ = check_token()
     if result == define.ResultBase.OK:
-        
+        print("zcvcfhmhj")
+
         return define.ResultBase.OK, "OK"
+    print("zcvcfhmhj")
 
     configs = Server_Configs()
     ip = configs.ip
@@ -104,7 +106,7 @@ def check_token() -> (Tuple[define.ResultType,  str]):
     s_key = configs.s_key
     token = configs.token
     ma_tv = configs.code
-    api = "check_connection"
+    api = "get_instance_info"
     data = {
         "ma_tv": ma_tv
     }
@@ -144,7 +146,7 @@ def get_list_facebook_account() -> (Tuple[define.ResultType, List[Facebook_Accou
     try:
         res = requests.get(url, json=data, headers=header)
         if res.status_code == 400:
-            return define.ResultBase.THE_TOKEN_IS_EXPIRE, None
+            return define.ResultBase.THE_TOKEN_IS_EXPIRE, res.text
         if res.status_code != 200:
             return define.ResultBase.ERROR_UNKNOW, res.status_code
         data = res.json()

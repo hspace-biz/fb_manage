@@ -1,7 +1,11 @@
-from PyQt6 import QtWidgets
-from ui_code_over.Manage_Facebook_Account import Ui_Manage_Facebook_Account_Over
-from ui_code_over.Import_Cookies_Over import Import_Cookies_Over
 import sys
+
+from PyQt6 import QtWidgets
+
+from ui_code_over.Import_Cookies_Over import Import_Cookies_Over
+from ui_code_over.Manage_Facebook_Account_excel import \
+    Ui_Manage_Facebook_Account_Over
+
 
 class ApplicationWindow(QtWidgets.QMainWindow):
     def __init__(self):
@@ -16,6 +20,7 @@ def main():
     application = ApplicationWindow()
     application.show()
     sys.exit(app.exec())
+
 
 if __name__ == "__main__":
     main()
