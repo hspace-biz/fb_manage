@@ -3,7 +3,7 @@ from http.client import IM_USED
 
 from Item.Cookie_Item import Cookie_Import_Item
 from main_utils import api, define
-from PyQt6.QtWidgets import QMainWindow, QWidget
+from PyQt6.QtWidgets import QMainWindow, QVBoxLayout, QWidget
 from ui_code_raw.Import_Cookies import Ui_Import_Cookie
 from ui_code_raw.Result_Insert_Cookie import Ui_Result_Insert_Cookie
 
@@ -17,6 +17,8 @@ class Import_Cookies_Over(Ui_Import_Cookie):
         self.MainWindow = MainWindow
         self.pushButton_Check_Cookie.clicked[bool].connect(self.check_cookie)
         self.actionConfig.triggered[bool].connect(self.open_config)
+        self.actionFacebook_Account_Manager.triggered[bool].connect(
+            lambda: self.open_manager_Facebook_Account_excel())
         self.actionImport_proxy.triggered[bool].connect(self.open_import_proxy)
         self.pushButton_CheckAll.clicked[bool].connect(self.check_all)
         self.pushButton_UncheckAll.clicked[bool].connect(self.uncheck_all)
@@ -24,6 +26,14 @@ class Import_Cookies_Over(Ui_Import_Cookie):
             self.remove_item_checked)
         self.pushButton_Insert.clicked[bool].connect(self.insert_to_db)
         self.item_cookies = []
+
+    def set_Manager_Facebook_Account_excel(self, window):
+        self._Manager_Facebook_Account_excel = window
+
+    def open_manager_Facebook_Account_excel(self):
+        print("======================")
+        self._Manager_Facebook_Account_excel.setupUi(self.MainWindow)
+        self.MainWindow.show()
 
     def open_import_proxy(self):
         self.import_proxy_window = ImportProxy_Over()
@@ -39,8 +49,15 @@ class Import_Cookies_Over(Ui_Import_Cookie):
                 result = api.insert_cookie(cookies=item.cookies,
                                            is_update=self.checkBox_Update_when_exists.isChecked()
                                            )
-                if result == define.Result.OK:
-                    list_uid.append(item.cookies["c_user"])
+                if result == define.ResultBase.PERMISSION_DENIED:
+                    self.label_result.setText(
+                        "This account has no insert permission.")
+                    return
+                if result == define.ResultBase.OK:
+                    list_uid.append(f"updated - {item.cookies['c_user']}")
+                if result == define.ResultBase.THE_COOKIE_ALREADY_EXISTS:
+                    list_uid.append(f"exists  - {item.cookies['c_user']}")
+
         self.label_result.setText(
             f"Update Successfull: {len(list_uid)}/{len(self.item_cookies)}")
         ui = Ui_Result_Insert_Cookie()
@@ -77,6 +94,11 @@ class Import_Cookies_Over(Ui_Import_Cookie):
         self.ui_Config_Over.show()
 
     def check_cookie(self):
+        self.label_count_cookie.setText("0")
+        self.item_cookies.clear()
+        for chi in self.groupBox_list_cookie.children():
+            if chi != self.groupBox_list_cookie and type(chi) != QVBoxLayout:
+                chi.deleteLater()
         cookie_text = self.textEdit_import_cookie.toPlainText().replace(" ", "").split("\n")
         uids = []
         for _cookie in cookie_text:

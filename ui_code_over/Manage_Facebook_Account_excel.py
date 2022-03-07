@@ -6,11 +6,13 @@ from main_utils.api import Facebook_Account, get_list_facebook_account, login
 from main_utils.define import ResultBase
 from main_utils.str_utils import remove_accent
 from PyQt6 import QtCore
-from PyQt6.QtWidgets import QLabel, QTableWidget, QTableWidgetItem, QWidget
+from PyQt6.QtWidgets import (QLabel, QMainWindow, QTableWidget,
+                             QTableWidgetItem, QWidget)
 from ui_code_raw.Manage_Facebook_Account import Ui_Manage_Facebook_Account
 
 from ui_code_over.Config_Window_Over import Ui_Config_Over
 from ui_code_over.Facebook_Account_Item import Ui_Facebook_Item_Over
+from ui_code_over.Import_Cookies_Over import Import_Cookies_Over
 
 
 class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
@@ -22,8 +24,12 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
 
     def setupUi(self, Manage_Facebook_Account):
         super().setupUi(Manage_Facebook_Account)
+        self.window = Manage_Facebook_Account
         self.actionConfigs_Authentication.triggered[bool].connect(
             self.open_config)
+        self.actionImport_Cookie.triggered[bool].connect(
+            self.import_cookie
+        )
         self.facebook_accounts = None
         self.pushButton_Reload.clicked[bool].connect(
             lambda x: self.load_data())
@@ -38,6 +44,13 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         self.checkBox_filter_name.toggled[bool].connect(self.filter)
         self.checkBox_filter_uid.toggled[bool].connect(self.filter)
         self.checkBox_filter_state.toggled[bool].connect(self.filter)
+
+    def import_cookie(self):
+        import_cookie = Import_Cookies_Over()
+        import_cookie.setupUi(self.window)
+        import_cookie.set_Manager_Facebook_Account_excel(
+            Ui_Manage_Facebook_Account_Over())
+        self.window.show()
 
     def reset_filter(self):
         self.checkBox_filter_name.setChecked(False)
@@ -89,8 +102,12 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         self.load_data(facebook_accounts=list_data_3)
 
     def load_data(self, facebook_accounts: List[Facebook_Account] = None):
+        self.label_result_api.setText("")
         if facebook_accounts is None:
-            login()
+            result, data = login()
+            if result == ResultBase.AUTHENTICATION_CONFIG_NONE:
+                self.label_result_api.setText(data)
+                return
             result, data = get_list_facebook_account()
             if result.is_ok:
                 pass

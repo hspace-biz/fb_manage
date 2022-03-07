@@ -25,10 +25,9 @@ class Facebook_Account:
 def login() -> (Tuple[define.ResultType, str]):
     result, _ = check_token()
     if result == define.ResultBase.OK:
-        print("zcvcfhmhj")
-
         return define.ResultBase.OK, "OK"
-    print("zcvcfhmhj")
+    if result == define.ResultBase.AUTHENTICATION_CONFIG_NONE:
+        return result, _
 
     configs = Server_Configs()
     ip = configs.ip
@@ -100,33 +99,44 @@ def login() -> (Tuple[define.ResultType, str]):
 
 
 def check_token() -> (Tuple[define.ResultType,  str]):
-    configs = Server_Configs()
-    ip = configs.ip
-    port = configs.port
-    s_key = configs.s_key
-    token = configs.token
-    ma_tv = configs.code
-    api = "get_instance_info"
-    data = {
-        "ma_tv": ma_tv
-    }
+    try:
+        configs = Server_Configs()
+        ip = configs.ip
+        if ip is None:
+            return define.ResultBase.AUTHENTICATION_CONFIG_NONE, define.ResultBase.AUTHENTICATION_CONFIG_NONE.msg
+        port = configs.port
+        s_key = configs.s_key
+        token = configs.token
+        ma_tv = configs.code
+        api = "get_instance_info"
+        data = {
+            "ma_tv": ma_tv
+        }
 
-    url = f"http://{ip}:{port}/{api}"
+        url = f"http://{ip}:{port}/{api}"
 
-    header = {
-        "Authorization": token,
-        "s-key": s_key
-    }
+        header = {
+            "Authorization": token,
+            "s-key": s_key
+        }
 
-    res = requests.get(url, json=data, headers=header)
-    print(res.text)
-    if res.status_code == 200:
-        return define.ResultBase.OK, None
-    return define.ResultBase.ERROR_UNKNOW, None
+        res = requests.get(url, json=data, headers=header)
+        print(res.text)
+        if res.status_code == 200:
+            return define.ResultBase.OK, None
+        return define.ResultBase.ERROR_UNKNOW, None
+    except requests.exceptions.Timeout as ex:
+        return define.ResultBase.SERVER_TIMEOUT, None
+    except Exception as ex:
+        return define.ResultBase.ERROR_UNKNOW, error.get_error_mess_in_ex(ex)
 
 
 def get_list_facebook_account() -> (Tuple[define.ResultType, List[Facebook_Account] | str]):
     try:
+        result, _ = login()
+        if result.is_error:
+            return result, _
+
         configs = Server_Configs()
         ip = configs.ip
         port = configs.port
@@ -168,6 +178,7 @@ def get_list_facebook_account() -> (Tuple[define.ResultType, List[Facebook_Accou
 
 
 def insert_cookie(cookies: dict, is_update: bool, upsert: bool = True) -> (define.ResultType):
+    login()
     configs = Server_Configs()
     ip = configs.ip
     port = configs.port
@@ -191,14 +202,18 @@ def insert_cookie(cookies: dict, is_update: bool, upsert: bool = True) -> (defin
     try:
         res = requests.put(url, json=data, headers=header)
         print(res.text)
+        print(res)
         if res.status_code == 400:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE
+        if res.status_code == 403:
+            return define.ResultBase.PERMISSION_DENIED
         if res.status_code != 200:
             return define.ResultBase.ERROR_UNKNOW
         res = res.json()
         print(res)
         # TODO: READ STATE IN SERVER AND MAP TO FILE
         if res.get("state") is None:
+
             return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED
         state = res["state"]
         if state.get("is_exists"):

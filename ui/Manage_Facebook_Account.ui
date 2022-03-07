@@ -261,12 +261,24 @@
     </property>
     <addaction name="actionConfigs_Authentication"/>
    </widget>
+   <widget class="QMenu" name="menuTool">
+    <property name="title">
+     <string>Tool</string>
+    </property>
+    <addaction name="actionImport_Cookie"/>
+   </widget>
    <addaction name="menuConfigs"/>
+   <addaction name="menuTool"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionConfigs_Authentication">
    <property name="text">
     <string>Configs Authentication</string>
+   </property>
+  </action>
+  <action name="actionImport_Cookie">
+   <property name="text">
+    <string>Import Cookie</string>
    </property>
   </action>
  </widget>
