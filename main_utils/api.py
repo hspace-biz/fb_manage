@@ -126,24 +126,24 @@ def check_token() -> (Tuple[define.ResultType,  str]):
 
 
 def get_list_facebook_account() -> (Tuple[define.ResultType, List[Facebook_Account] | str]):
-    configs = Server_Configs()
-    ip = configs.ip
-    port = configs.port
-    s_key = configs.s_key
-    token = configs.token
-    ma_tv = configs.code
-    api = "get_all_facebook_account_by_user_code"
-    data = {
-        "ma_tv": ma_tv
-    }
-
-    url = f"http://{ip}:{port}/{api}"
-
-    header = {
-        "Authorization": token,
-        "s-key": s_key
-    }
     try:
+        configs = Server_Configs()
+        ip = configs.ip
+        port = configs.port
+        s_key = configs.s_key
+        token = configs.token
+        ma_tv = configs.code
+        api = "get_all_facebook_account_by_user_code"
+        data = {
+            "ma_tv": ma_tv
+        }
+
+        url = f"http://{ip}:{port}/{api}"
+
+        header = {
+            "Authorization": token,
+            "s-key": s_key
+        }
         res = requests.get(url, json=data, headers=header)
         if res.status_code == 400:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE, res.text
