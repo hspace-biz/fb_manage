@@ -153,8 +153,11 @@ class Ui_Manage_Facebook_Account(object):
         self.actionConfigs_Authentication.setObjectName("actionConfigs_Authentication")
         self.actionImport_Cookie = QtGui.QAction(Manage_Facebook_Account)
         self.actionImport_Cookie.setObjectName("actionImport_Cookie")
+        self.actionProxy_Manager = QtGui.QAction(Manage_Facebook_Account)
+        self.actionProxy_Manager.setObjectName("actionProxy_Manager")
         self.menuConfigs.addAction(self.actionConfigs_Authentication)
         self.menuTool.addAction(self.actionImport_Cookie)
+        self.menuTool.addAction(self.actionProxy_Manager)
         self.menubar.addAction(self.menuConfigs.menuAction())
         self.menubar.addAction(self.menuTool.menuAction())
 
@@ -180,3 +183,4 @@ class Ui_Manage_Facebook_Account(object):
         self.menuTool.setTitle(_translate("Manage_Facebook_Account", "Tool"))
         self.actionConfigs_Authentication.setText(_translate("Manage_Facebook_Account", "Configs Authentication"))
         self.actionImport_Cookie.setText(_translate("Manage_Facebook_Account", "Import Cookie"))
+        self.actionProxy_Manager.setText(_translate("Manage_Facebook_Account", "Proxy Manager"))

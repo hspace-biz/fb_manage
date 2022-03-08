@@ -22,6 +22,48 @@ class Facebook_Account:
         self.cookies = data.get("cookies")
 
 
+class Proxy:
+    def __init__(self, data: dict):
+        self.ip = str(data.get("ip"))
+        data.pop("ip")
+        self.port = str(data.get("port"))
+        data.pop("port")
+
+        self.user_name = str(data.get("user_name"))
+        data.pop("user_name")
+
+        self.facebook_id = data.get("facebook_id")
+        data.pop("facebook_id")
+
+        self.is_disabled = str(data.get("is_disabled"))
+        data.pop("is_disabled")
+
+        self.password = str(data.get("password"))
+        data.pop("password")
+
+        self.facebook_uid = data.get("facebook_uid")
+        data.pop("facebook_uid")
+
+        self.facebook_name = data.get("facebook_name")
+        data.pop("facebook_name")
+
+        self.facebook_uid = str(self.facebook_uid)
+        self.facebook_id = str(self.facebook_id)
+
+    def to_dict(self):
+        data = {
+            "ip": self.ip,
+            "port": self.port,
+            "user_name": self.user_name,
+            "facebook_id": self.facebook_id,
+            "is_disabled": self.is_disabled,
+            "password": self.password,
+            "facebook_name": self.facebook_name,
+            "facebook_uid": self.facebook_uid
+        }
+        return data
+
+
 def login() -> (Tuple[define.ResultType, str]):
     result, _ = check_token()
     if result == define.ResultBase.OK:
@@ -125,6 +167,51 @@ def check_token() -> (Tuple[define.ResultType,  str]):
         if res.status_code == 200:
             return define.ResultBase.OK, None
         return define.ResultBase.ERROR_UNKNOW, None
+    except requests.exceptions.Timeout as ex:
+        return define.ResultBase.SERVER_TIMEOUT, None
+    except Exception as ex:
+        return define.ResultBase.ERROR_UNKNOW, error.get_error_mess_in_ex(ex)
+
+
+def get_list_proxy() -> (Tuple[define.ResultType, List[Proxy] | str]):
+    try:
+        result, _ = login()
+        if result.is_error:
+            return result, _
+
+        configs = Server_Configs()
+        ip = configs.ip
+        port = configs.port
+        s_key = configs.s_key
+        token = configs.token
+        ma_tv = configs.code
+        api = "get_all_my_proxy"
+        data = {
+            "ma_tv": ma_tv
+        }
+
+        url = f"http://{ip}:{port}/{api}"
+
+        header = {
+            "Authorization": token,
+            "s-key": s_key
+        }
+        res = requests.get(url, json=data, headers=header)
+        if res.status_code == 400:
+            return define.ResultBase.THE_TOKEN_IS_EXPIRE, res.text
+        if res.status_code != 200:
+            return define.ResultBase.ERROR_UNKNOW, res.status_code
+        data = res.json()
+        data = data.get("data")
+        if data is None:
+            return define.ResultBase.DATA_NOT_FOUND_IN_RESPONSE, res.json()
+
+        list_proxy = []
+        for _data in data:
+            proxy = Proxy(data=_data)
+            list_proxy.append(proxy)
+        return define.ResultBase.OK, list_proxy
+
     except requests.exceptions.Timeout as ex:
         return define.ResultBase.SERVER_TIMEOUT, None
     except Exception as ex:

@@ -3,7 +3,7 @@ import sys
 from PyQt6 import QtWidgets
 
 from ui_code_over.Import_Cookies_Over import Import_Cookies_Over
-from ui_code_over.Manage_Facebook_Account_excel import \
+from ui_code_over.Manage_Facebook_Account import \
     Ui_Manage_Facebook_Account_Over
 
 

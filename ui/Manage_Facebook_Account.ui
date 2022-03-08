@@ -266,6 +266,7 @@
      <string>Tool</string>
     </property>
     <addaction name="actionImport_Cookie"/>
+    <addaction name="actionProxy_Manager"/>
    </widget>
    <addaction name="menuConfigs"/>
    <addaction name="menuTool"/>
@@ -279,6 +280,11 @@
   <action name="actionImport_Cookie">
    <property name="text">
     <string>Import Cookie</string>
+   </property>
+  </action>
+  <action name="actionProxy_Manager">
+   <property name="text">
+    <string>Proxy Manager</string>
    </property>
   </action>
  </widget>

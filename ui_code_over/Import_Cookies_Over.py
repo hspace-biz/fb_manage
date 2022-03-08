@@ -19,7 +19,7 @@ class Import_Cookies_Over(Ui_Import_Cookie):
         self.actionConfig.triggered[bool].connect(self.open_config)
         self.actionFacebook_Account_Manager.triggered[bool].connect(
             lambda: self.open_manager_Facebook_Account_excel())
-        self.actionImport_proxy.triggered[bool].connect(self.open_import_proxy)
+
         self.pushButton_CheckAll.clicked[bool].connect(self.check_all)
         self.pushButton_UncheckAll.clicked[bool].connect(self.uncheck_all)
         self.pushButton_Remove_Item_Selected.clicked[bool].connect(
@@ -34,12 +34,6 @@ class Import_Cookies_Over(Ui_Import_Cookie):
         print("======================")
         self._Manager_Facebook_Account_excel.setupUi(self.MainWindow)
         self.MainWindow.show()
-
-    def open_import_proxy(self):
-        self.import_proxy_window = ImportProxy_Over()
-        self.ui_import_proxy_window = QMainWindow()
-        self.import_proxy_window.setupUi(self.ui_import_proxy_window)
-        self.ui_import_proxy_window.show()
 
     def insert_to_db(self):
         list_uid = []

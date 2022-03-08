@@ -330,7 +330,6 @@ p, li { white-space: pre-wrap; }
     </property>
     <addaction name="actionProxy_Manager"/>
     <addaction name="actionFacebook_Account_Manager"/>
-    <addaction name="actionImport_proxy"/>
    </widget>
    <addaction name="menuSetting"/>
    <addaction name="menuTool"/>

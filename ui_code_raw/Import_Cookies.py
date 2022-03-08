@@ -189,7 +189,6 @@ class Ui_Import_Cookie(object):
         self.menuSetting.addAction(self.actionConfig)
         self.menuTool.addAction(self.actionProxy_Manager)
         self.menuTool.addAction(self.actionFacebook_Account_Manager)
-        self.menuTool.addAction(self.actionImport_proxy)
         self.menubar.addAction(self.menuSetting.menuAction())
         self.menubar.addAction(self.menuTool.menuAction())
 

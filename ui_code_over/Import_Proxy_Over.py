@@ -1,17 +1,34 @@
 
 from main_utils import api, define
-from PyQt6.QtWidgets import QWidget
+from PyQt6.QtWidgets import QMainWindow, QWidget
 from ui_code_raw.Import_Proxy import Ui_ImportProxy
 
+from ui_code_over.Config_Window_Over import Ui_Config_Over
 from ui_code_over.Proxy_Item_Over import Ui_Proxy_Item_Over
 
 
 class ImportProxy_Over(Ui_ImportProxy):
     def setupUi(self, ImportProxy):
         super().setupUi(ImportProxy=ImportProxy)
+        self.actionServer.triggered[bool].connect(self.open_config)
+        self.actionProxy_manager.triggered[bool].connect(
+            self.open_Manage_Proxy)
         self.pushButton_Read.clicked[bool].connect(self.read)
-
         self.list_item = []
+
+    def set_Manage_Proxy(self, window):
+        self.Manage_Proxy = window
+
+    def open_Manage_Proxy(self):
+        self.manager_Proxy_Window = QMainWindow()
+        self.Manage_Proxy.setupUi(self.manager_Proxy_Window)
+        self.manager_Proxy_Window.show()
+
+    def open_config(self):
+        self.ui_Config_Over = QWidget()
+        self._ui_Config_Over = Ui_Config_Over()
+        self._ui_Config_Over.setupUi(self.ui_Config_Over)
+        self.ui_Config_Over.show()
 
     def add_proxy_item(self,
                        proxy_str: str = None,

@@ -233,7 +233,7 @@ IP_2:PORT_2:USERNAME_2:PASSWORD_2</string>
    </property>
    <widget class="QMenu" name="menuConfigs">
     <property name="title">
-     <string>Configs</string>
+     <string>Setting</string>
     </property>
     <addaction name="actionServer"/>
    </widget>
@@ -241,8 +241,7 @@ IP_2:PORT_2:USERNAME_2:PASSWORD_2</string>
     <property name="title">
      <string>Tool</string>
     </property>
-    <addaction name="actionImport_Cookies"/>
-    <addaction name="actionFacebook_Manager"/>
+    <addaction name="actionProxy_manager"/>
    </widget>
    <addaction name="menuConfigs"/>
    <addaction name="menuTool"/>
@@ -250,7 +249,7 @@ IP_2:PORT_2:USERNAME_2:PASSWORD_2</string>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionServer">
    <property name="text">
-    <string>Server</string>
+    <string>Configs Authentication</string>
    </property>
   </action>
   <action name="actionImport_Cookies">
@@ -261,6 +260,11 @@ IP_2:PORT_2:USERNAME_2:PASSWORD_2</string>
   <action name="actionFacebook_Manager">
    <property name="text">
     <string>Facebook Account Manager</string>
+   </property>
+  </action>
+  <action name="actionProxy_manager">
+   <property name="text">
+    <string>Proxy manager</string>
    </property>
   </action>
  </widget>
