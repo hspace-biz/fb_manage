@@ -114,7 +114,7 @@
          <x>0</x>
          <y>0</y>
          <width>780</width>
-         <height>210</height>
+         <height>243</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_list_facebook_account">
@@ -155,7 +155,7 @@
             <x>0</x>
             <y>0</y>
             <width>760</width>
-            <height>139</height>
+            <height>165</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_statistics"/>
@@ -172,53 +172,29 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QGroupBox" name="groupBox_3">
+        <widget class="QPushButton" name="pushButton_share_permissions">
          <property name="maximumSize">
           <size>
            <width>150</width>
            <height>16777215</height>
           </size>
          </property>
-         <property name="title">
-          <string>Master code Taget</string>
+         <property name="text">
+          <string>share permissions</string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
-           <widget class="QComboBox" name="comboBox_2"/>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_3">
-            <property name="text">
-             <string>Distribution</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_2">
+        <widget class="QPushButton" name="pushButton_remove_permissions">
          <property name="maximumSize">
           <size>
            <width>150</width>
            <height>16777215</height>
           </size>
          </property>
-         <property name="title">
-          <string>User code Taget</string>
+         <property name="text">
+          <string>remove permissions</string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <item>
-           <widget class="QComboBox" name="comboBox"/>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_2">
-            <property name="text">
-             <string>Distribution</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
         </widget>
        </item>
        <item>

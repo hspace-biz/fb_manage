@@ -24,31 +24,31 @@ class Facebook_Account:
 
 class Proxy:
     def __init__(self, data: dict):
-        self.ip = str(data.get("ip"))
+        self.ip: str = str(data.get("ip"))
         data.pop("ip")
-        self.port = str(data.get("port"))
+        self.port: str = str(data.get("port"))
         data.pop("port")
 
-        self.user_name = str(data.get("user_name"))
+        self.user_name: str = str(data.get("user_name"))
         data.pop("user_name")
 
-        self.facebook_id = data.get("facebook_id")
+        self.facebook_id: str = data.get("facebook_id")
         data.pop("facebook_id")
 
-        self.is_disabled = str(data.get("is_disabled"))
+        self.is_disabled: str = str(data.get("is_disabled"))
         data.pop("is_disabled")
 
-        self.password = str(data.get("password"))
+        self.password: str = str(data.get("password"))
         data.pop("password")
 
-        self.facebook_uid = data.get("facebook_uid")
+        self.facebook_uid: str = data.get("facebook_uid")
         data.pop("facebook_uid")
 
-        self.facebook_name = data.get("facebook_name")
+        self.facebook_name: str = data.get("facebook_name")
         data.pop("facebook_name")
 
-        self.facebook_uid = str(self.facebook_uid)
-        self.facebook_id = str(self.facebook_id)
+        self.facebook_uid: str = str(self.facebook_uid)
+        self.facebook_id: str = str(self.facebook_id)
 
     def to_dict(self):
         data = {
@@ -173,6 +173,137 @@ def check_token() -> (Tuple[define.ResultType,  str]):
         return define.ResultBase.ERROR_UNKNOW, error.get_error_mess_in_ex(ex)
 
 
+def remove_facebook_from_normal_user(data: dict) -> (Tuple[define.ResultType, List[str] | str]):
+    try:
+        result, _ = login()
+        if result.is_error:
+            return result, _
+
+        configs = Server_Configs()
+        ip = configs.ip
+        port = configs.port
+        s_key = configs.s_key
+        token = configs.token
+        ma_tv = configs.code
+        api = "remove_facebook_account_from_normal_user"
+
+        url = f"http://{ip}:{port}/{api}"
+
+        header = {
+            "Authorization": token,
+            "s-key": s_key
+        }
+        res = requests.post(url, json=data, headers=header)
+        if res.status_code == 401:
+            return define.ResultBase.THE_TOKEN_IS_EXPIRE, define.ResultBase.THE_TOKEN_IS_EXPIRE.msg
+        if res.status_code == 403:
+            return define.ResultBase.PERMISSION_DENIED, define.ResultBase.PERMISSION_DENIED.msg
+        if res.status_code != 200:
+            return define.ResultBase.ERROR_UNKNOW, res.text
+
+        data = res.json()
+        data = data.get("data")
+        if data is None:
+            return define.ResultBase.DATA_NOT_FOUND_IN_RESPONSE, res.json()
+
+        retVal = data
+
+        return define.ResultBase.OK, retVal
+
+    except requests.exceptions.Timeout as ex:
+        return define.ResultBase.SERVER_TIMEOUT, None
+    except Exception as ex:
+        return define.ResultBase.ERROR_UNKNOW, error.get_error_mess_in_ex(ex)
+
+
+def share_facebook_from_master_user_to_normal_user(data: dict) -> (Tuple[define.ResultType, List[str] | str]):
+    try:
+        result, _ = login()
+        if result.is_error:
+            return result, _
+
+        configs = Server_Configs()
+        ip = configs.ip
+        port = configs.port
+        s_key = configs.s_key
+        token = configs.token
+        ma_tv = configs.code
+        api = "share_facebook_account_for_normal_user"
+
+        url = f"http://{ip}:{port}/{api}"
+
+        header = {
+            "Authorization": token,
+            "s-key": s_key
+        }
+        res = requests.post(url, json=data, headers=header)
+        if res.status_code == 401:
+            return define.ResultBase.THE_TOKEN_IS_EXPIRE, define.ResultBase.THE_TOKEN_IS_EXPIRE.msg
+        if res.status_code == 403:
+            return define.ResultBase.PERMISSION_DENIED, define.ResultBase.PERMISSION_DENIED.msg
+        if res.status_code != 200:
+            return define.ResultBase.ERROR_UNKNOW, res.text
+
+        data = res.json()
+        data = data.get("data")
+        if data is None:
+            return define.ResultBase.DATA_NOT_FOUND_IN_RESPONSE, res.json()
+
+        retVal = data
+
+        return define.ResultBase.OK, retVal
+
+    except requests.exceptions.Timeout as ex:
+        return define.ResultBase.SERVER_TIMEOUT, None
+    except Exception as ex:
+        return define.ResultBase.ERROR_UNKNOW, error.get_error_mess_in_ex(ex)
+
+
+def get_all_normal_user() -> (Tuple[define.ResultType, List[str] | str]):
+    try:
+        result, _ = login()
+        if result.is_error:
+            return result, _
+
+        configs = Server_Configs()
+        ip = configs.ip
+        port = configs.port
+        s_key = configs.s_key
+        token = configs.token
+        ma_tv = configs.code
+        api = "get_all_normal_user"
+        data = {
+        }
+
+        url = f"http://{ip}:{port}/{api}"
+
+        header = {
+            "Authorization": token,
+            "s-key": s_key
+        }
+        res = requests.get(url, json=data, headers=header)
+        if res.status_code == 401:
+            return define.ResultBase.THE_TOKEN_IS_EXPIRE, define.ResultBase.THE_TOKEN_IS_EXPIRE.msg
+        if res.status_code == 403:
+            return define.ResultBase.PERMISSION_DENIED, define.ResultBase.PERMISSION_DENIED.msg
+        if res.status_code != 200:
+            return define.ResultBase.ERROR_UNKNOW, res.text
+
+        data = res.json()
+        data = data.get("data")
+        if data is None:
+            return define.ResultBase.DATA_NOT_FOUND_IN_RESPONSE, res.json()
+
+        retVal = data
+
+        return define.ResultBase.OK, retVal
+
+    except requests.exceptions.Timeout as ex:
+        return define.ResultBase.SERVER_TIMEOUT, None
+    except Exception as ex:
+        return define.ResultBase.ERROR_UNKNOW, error.get_error_mess_in_ex(ex)
+
+
 def get_list_proxy() -> (Tuple[define.ResultType, List[Proxy] | str]):
     try:
         result, _ = login()
@@ -197,7 +328,7 @@ def get_list_proxy() -> (Tuple[define.ResultType, List[Proxy] | str]):
             "s-key": s_key
         }
         res = requests.get(url, json=data, headers=header)
-        if res.status_code == 400:
+        if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE, res.text
         if res.status_code != 200:
             return define.ResultBase.ERROR_UNKNOW, res.status_code
@@ -242,7 +373,7 @@ def get_list_facebook_account() -> (Tuple[define.ResultType, List[Facebook_Accou
             "s-key": s_key
         }
         res = requests.get(url, json=data, headers=header)
-        if res.status_code == 400:
+        if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE, res.text
         if res.status_code != 200:
             return define.ResultBase.ERROR_UNKNOW, res.status_code
@@ -290,7 +421,7 @@ def insert_cookie(cookies: dict, is_update: bool, upsert: bool = True) -> (defin
         res = requests.put(url, json=data, headers=header)
         print(res.text)
         print(res)
-        if res.status_code == 400:
+        if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE
         if res.status_code == 403:
             return define.ResultBase.PERMISSION_DENIED

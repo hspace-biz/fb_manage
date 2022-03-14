@@ -4,7 +4,8 @@ from typing import List
 
 import PyQt6
 from main_utils import qtable_utils
-from main_utils.api import Facebook_Account, get_list_facebook_account, login
+from main_utils.api import (Facebook_Account, get_all_normal_user,
+                            get_list_facebook_account, login)
 from main_utils.define import ResultBase
 from main_utils.str_utils import remove_accent
 from PyQt6.QtWidgets import (QLabel, QMainWindow, QTableWidget,
@@ -14,6 +15,8 @@ from ui_code_raw.Manage_Facebook_Account import Ui_Manage_Facebook_Account
 from ui_code_over.Config_Window_Over import Ui_Config_Over
 from ui_code_over.Import_Cookies_Over import Import_Cookies_Over
 from ui_code_over.Manage_Proxy import Ui_Proxy_Manager_Over
+from ui_code_over.Remove_Permission_over import Ui_Form_Remove_Permission_over
+from ui_code_over.Share_Permission_over import Ui_Form_Share_Permission_over
 
 
 class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
@@ -51,6 +54,29 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         self.checkBox_filter_name.toggled[bool].connect(self.filter)
         self.checkBox_filter_uid.toggled[bool].connect(self.filter)
         self.checkBox_filter_state.toggled[bool].connect(self.filter)
+        self.pushButton_share_permissions.clicked[bool].connect(
+            self.open_share_permission)
+        self.pushButton_remove_permissions.clicked[bool].connect(
+            self.open_remove_permission
+        )
+
+    def open_remove_permission(self):
+        self.remove_permission_windows = QWidget()
+        self.remove_permission = Ui_Form_Remove_Permission_over()
+        self.remove_permission.setupUi(self.remove_permission_windows)
+        self.remove_permission_windows.show()
+
+    def open_share_permission(self):
+        indexs = self.tableWidget_list_account.selectedIndexes()
+        data = ""
+        for index in indexs:
+            uid = self.tableWidget_list_account.item(0, index.row())
+            data += uid.text()+"\n"
+        self.permission_windows = QWidget()
+        self.share_permission = Ui_Form_Share_Permission_over()
+        self.share_permission.setupUi(self.permission_windows)
+        self.share_permission.set_list_uid(data)
+        self.permission_windows.show()
 
     def open_manage_proxy(self):
 
@@ -142,7 +168,6 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
                 if key == "cookies":
                     continue
                 if key == "state":
-                    print(str(account[key]))
                     if list_state.get(str(account[key])) is None:
                         list_state[str(account[key])] = 0
                     list_state[str(account[key])] += 1
@@ -169,6 +194,10 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
                 label.setText(f"{state}: {list_state[state]}")
                 self.verticalLayout_statistics.addWidget(label)
                 self.list_statistics_state_child.append(label)
+        result, data = get_all_normal_user()
+        if result.is_error:
+            self.label_result_api.setText(str(data))
+            return
 
     def open_config(self):
         self.ui_Config_Over = QWidget()

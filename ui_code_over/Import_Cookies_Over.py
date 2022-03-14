@@ -8,7 +8,6 @@ from ui_code_raw.Import_Cookies import Ui_Import_Cookie
 from ui_code_raw.Result_Insert_Cookie import Ui_Result_Insert_Cookie
 
 from ui_code_over.Config_Window_Over import Ui_Config_Over
-from ui_code_over.Import_Proxy_Over import ImportProxy_Over
 
 
 class Import_Cookies_Over(Ui_Import_Cookie):
