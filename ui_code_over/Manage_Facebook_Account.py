@@ -70,7 +70,9 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         indexs = self.tableWidget_list_account.selectedIndexes()
         data = ""
         for index in indexs:
-            uid = self.tableWidget_list_account.item(0, index.row())
+            uid = self.tableWidget_list_account.item(index.row(), 0)
+            if uid is None:
+                continue
             data += uid.text()+"\n"
         self.permission_windows = QWidget()
         self.share_permission = Ui_Form_Share_Permission_over()
