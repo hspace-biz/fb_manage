@@ -45,6 +45,29 @@
         </widget>
        </item>
        <item>
+        <widget class="QGroupBox" name="groupBox_8">
+         <property name="title">
+          <string>Filter by user code</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QCheckBox" name="checkBox_filter_user_code">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_filter_user_code">
+            <property name="placeholderText">
+             <string>enter the user code</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
         <widget class="QGroupBox" name="groupBox_6">
          <property name="title">
           <string>Filter by name</string>
@@ -60,7 +83,7 @@
           <item>
            <widget class="QLineEdit" name="lineEdit_filter_name">
             <property name="placeholderText">
-             <string/>
+             <string>Enter the Name</string>
             </property>
            </widget>
           </item>

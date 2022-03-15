@@ -49,6 +49,7 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
 
         self.load_data()
         self.lineEdit_filter_name.textChanged.connect(self.filter)
+        self.lineEdit_filter_user_code.textChanged.connect(self.filter)
         self.lineEdit_filter_uid.textChanged.connect(self.filter)
         self.comboBox_filter_state.currentTextChanged.connect(self.filter)
         self.checkBox_filter_name.toggled[bool].connect(self.filter)
@@ -125,9 +126,23 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
                     if str(account.uid).find(text) >= 0:
                         list_data_2.append(account)
             else:
-                list_data_2 = list_data.copy()
+                list_data_2 = list_data
         else:
-            list_data_2 = list_data.copy()
+            list_data_2 = list_data
+
+        list_data_3 = []
+        if self.checkBox_filter_user_code.isChecked():
+            text = self.lineEdit_filter_user_code.text()
+            if len(text) > 0:
+                for account in list_data_2:
+                    if str(account.user_code).find(text) >= 0:
+                        list_data_3.append(account)
+            else:
+                list_data_3 = list_data_2
+        else:
+            list_data_3 = list_data_2
+
+        list_data_2 = list_data_3
 
         list_data_3 = []
         if self.checkBox_filter_state.isChecked():
@@ -137,9 +152,9 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
                     if str(account.state) == text:
                         list_data_3.append(account)
             else:
-                list_data_3 = list_data_2.copy()
+                list_data_3 = list_data_2
         else:
-            list_data_3 = list_data_2.copy()
+            list_data_3 = list_data_2
 
         self.load_data(facebook_accounts=list_data_3)
 
