@@ -194,6 +194,7 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
                     self.data[key] = []
                 self.data[key].append(str(account[key]))
         qtable_utils.setData(self.tableWidget_list_account, data=self.data)
+        
         if self.comboBox_filter_state.count() <= 0:
             self.comboBox_filter_state.addItems(list_state.keys())
         if self.list_statistics_state_child:

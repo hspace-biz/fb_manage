@@ -10,6 +10,7 @@ from PyQt6.QtWidgets import (QLabel, QMainWindow, QTableWidget,
 from ui_code_raw.Proxy_Manager import Ui_MainWindow_Proxy_Manager
 
 from ui_code_over.Config_Window_Over import Ui_Config_Over
+from ui_code_over.Import_Proxy_Over import Ui_ImportProxy_over
 
 
 class Ui_Proxy_Manager_Over(Ui_MainWindow_Proxy_Manager):
@@ -150,12 +151,10 @@ class Ui_Proxy_Manager_Over(Ui_MainWindow_Proxy_Manager):
         qtable_utils.setData(self.tableWidget_list_proxy, data=self.data)
 
     def open_import_proxy(self):
-        pass
-        # self.import_proxy_window = ImportProxy_Over()
-        # self.import_proxy_window.set_Manage_Proxy(self)
-        # self.ui_import_proxy_window = QMainWindow()
-        # self.import_proxy_window.setupUi(self.ui_import_proxy_window)
-        # self.ui_import_proxy_window.show()
+        self.import_proxy_window = Ui_ImportProxy_over()
+        self.ui_import_proxy_window = QWidget()
+        self.import_proxy_window.setupUi(self.ui_import_proxy_window)
+        self.ui_import_proxy_window.show()
 
     def open_config(self):
         self.ui_Config_Over = QWidget()

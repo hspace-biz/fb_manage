@@ -23,8 +23,8 @@ class ResultType():
 
 
 class ResultBase:
-    THE_COOKIE_ALREADY_EXISTS: ResultType = ResultType(
-        code=0, msg="THE_COOKIE_ALREADY_EXISTS", is_error=True)
+    ALREADY_EXISTS: ResultType = ResultType(
+        code=0, msg="ALREADY_EXISTS", is_error=True)
     THE_COOKIE_UPDATED: ResultType = ResultType(
         code=1, msg="THE_COOKIE_UPDATED", is_ok=True)
     SERVER_TIMEOUT: ResultType = ResultType(

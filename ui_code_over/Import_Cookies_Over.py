@@ -48,7 +48,7 @@ class Import_Cookies_Over(Ui_Import_Cookie):
                     return
                 if result == define.ResultBase.OK:
                     list_uid.append(f"updated - {item.cookies['c_user']}")
-                if result == define.ResultBase.THE_COOKIE_ALREADY_EXISTS:
+                if result == define.ResultBase.ALREADY_EXISTS:
                     list_uid.append(f"exists  - {item.cookies['c_user']}")
 
         self.label_result.setText(

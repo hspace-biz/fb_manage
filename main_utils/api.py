@@ -419,8 +419,6 @@ def insert_cookie(cookies: dict, is_update: bool, upsert: bool = True) -> (defin
     }
     try:
         res = requests.put(url, json=data, headers=header)
-        print(res.text)
-        print(res)
         if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE
         if res.status_code == 403:
@@ -428,14 +426,63 @@ def insert_cookie(cookies: dict, is_update: bool, upsert: bool = True) -> (defin
         if res.status_code != 200:
             return define.ResultBase.ERROR_UNKNOW
         res = res.json()
-        print(res)
         # TODO: READ STATE IN SERVER AND MAP TO FILE
         if res.get("state") is None:
 
             return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED
         state = res["state"]
         if state.get("is_exists"):
-            return define.ResultBase.THE_COOKIE_ALREADY_EXISTS
+            return define.ResultBase.ALREADY_EXISTS
+        if state.get("the_format_is_incorrect"):
+            return define.ResultBase.THE_COOKIES_FORMAT_IS_INCORRECT
+        if state.get("is_ok"):
+            return define.ResultBase.OK
+
+        return define.ResultBase.RESULT_UNKNOW
+
+    except requests.exceptions.Timeout as ex:
+        return define.ResultBase.SERVER_TIMEOUT
+    except Exception as ex:
+        return define.ResultBase.ERROR_UNKNOW
+
+
+def insert_proxy(proxy: dict, is_update: bool, upsert: bool = True) -> (define.ResultType):
+    login()
+    configs = Server_Configs()
+    ip = configs.ip
+    port = configs.port
+    s_key = configs.s_key
+    token = configs.token
+    code = configs.code
+    api = "insert_proxy_for_master_user"
+    data = {
+        "data": proxy,
+        "is_update": is_update,
+        "upsert": upsert
+    }
+
+    url = f"http://{ip}:{port}/{api}"
+
+    header = {
+        "Authorization": token,
+        "s-key": s_key
+    }
+    try:
+        res = requests.put(url, json=data, headers=header)
+        if res.status_code == 401:
+            return define.ResultBase.THE_TOKEN_IS_EXPIRE
+        if res.status_code == 403:
+            return define.ResultBase.PERMISSION_DENIED
+        if res.status_code != 200:
+            return define.ResultBase.ERROR_UNKNOW
+        res = res.json()
+        # TODO: READ STATE IN SERVER AND MAP TO FILE
+        if res.get("state") is None:
+
+            return define.ResultBase.THE_RESPONSE_FORMAT_IS_NOT_SUPPORTED
+        state = res["state"]
+        if state.get("is_exists"):
+            return define.ResultBase.ALREADY_EXISTS
         if state.get("the_format_is_incorrect"):
             return define.ResultBase.THE_COOKIES_FORMAT_IS_INCORRECT
         if state.get("is_ok"):

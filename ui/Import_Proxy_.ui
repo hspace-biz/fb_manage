@@ -1,57 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Import_Cookie</class>
- <widget class="QMainWindow" name="Import_Cookie">
+ <class>ImportProxy</class>
+ <widget class="QMainWindow" name="ImportProxy">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>656</height>
+    <height>759</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>800</width>
-    <height>400</height>
-   </size>
-  </property>
   <property name="windowTitle">
-   <string>Import Cookie</string>
+   <string>Import Proxy</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QScrollArea" name="scrollArea">
+     <widget class="QScrollArea" name="scrollArea_list_proxy">
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents">
+      <widget class="QWidget" name="scrollAreaWidgetContents_list_proxy">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>0</y>
          <width>780</width>
-         <height>335</height>
+         <height>314</height>
         </rect>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QGroupBox" name="groupBox_list_cookie">
-          <property name="title">
-           <string>List cookie</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_list_cookie"/>
-         </widget>
-        </item>
-       </layout>
+       <layout class="QVBoxLayout" name="verticalLayout_list_proxy"/>
       </widget>
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="label">
         <property name="maximumSize">
          <size>
           <width>50</width>
@@ -67,7 +52,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Selected:</string>
+         <string>Count:</string>
         </property>
        </widget>
       </item>
@@ -78,7 +63,6 @@
           <family>Times New Roman</family>
           <pointsize>10</pointsize>
           <weight>75</weight>
-          <italic>true</italic>
           <bold>true</bold>
          </font>
         </property>
@@ -88,28 +72,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_Remove_Item_Selected">
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Times New Roman</family>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Remove item checked</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_CheckAll">
+       <widget class="QPushButton" name="pushButton_check_all">
         <property name="maximumSize">
          <size>
           <width>100</width>
@@ -130,7 +93,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_UncheckAll">
+       <widget class="QPushButton" name="pushButton_uncheck_all">
         <property name="maximumSize">
          <size>
           <width>100</width>
@@ -153,41 +116,35 @@
      </layout>
     </item>
     <item>
-     <widget class="QTextEdit" name="textEdit_import_cookie">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
+     <widget class="QPlainTextEdit" name="plainTextEdit_Import_Proxy">
       <property name="font">
        <font>
         <family>Times New Roman</family>
         <pointsize>10</pointsize>
-        <weight>50</weight>
-        <italic>false</italic>
-        <bold>false</bold>
        </font>
       </property>
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Times New Roman'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; color:#00ff00;&quot;&gt;sb=wRX1YXPf0qWAWdEueXNk1gpA; wd=1920x963; datr=wRX1YbwWLkyNeFR85pz_YdJY; c_user=100035571584027; xs=34:HRuQzag1gpFZPw:2:1643451855:-1:7584; fr=01RQ3efANLcPFOScu.AWU8rvSpgoJ-saALCpi0WxGwebc.Bh9RXB.is.AAA.0.0.Bh9RXO.AWUKVfaOoJs; spin=r.1004997685_b.trunk_t.1643451862_s.1_v.2_; presence=C{&amp;quot;t3&amp;quot;:[],&amp;quot;utc3&amp;quot;:1643451891589,&amp;quot;v&amp;quot;:1}&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <property name="plainText">
+       <string>103.172.235.29:3253:sasamviet:f518a0661
+103.172.234.170:3253:sasamviet:f518a0661
+103.172.235.31:3253:sasamviet:f518a0661
+103.172.234.163:3253:sasamviet:f518a0661
+103.172.235.179:3253:sasamviet:f518a0661
+IP_0:PORT_0:USERNAME_0:PASSWORD_0
+IP_1:PORT_1:USERNAME_1:PASSWORD_1
+IP_2:PORT_2:USERNAME_2:PASSWORD_2</string>
       </property>
       <property name="placeholderText">
-       <string>Enter Your Cookies.</string>
+       <string/>
       </property>
      </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_2">
         <property name="maximumSize">
          <size>
-          <width>100</width>
+          <width>50</width>
           <height>16777215</height>
          </size>
         </property>
@@ -200,66 +157,22 @@ p, li { white-space: pre-wrap; }
          </font>
         </property>
         <property name="text">
-         <string>Count Cookies:</string>
+         <string>Count:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_count_cookie">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
+       <widget class="QLabel" name="label_count_proxy">
         <property name="font">
          <font>
           <family>Times New Roman</family>
           <pointsize>10</pointsize>
           <weight>75</weight>
-          <italic>true</italic>
           <bold>true</bold>
          </font>
         </property>
         <property name="text">
          <string>0</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_result">
-        <property name="font">
-         <font>
-          <family>Times New Roman</family>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <italic>true</italic>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_Update_when_exists">
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Times New Roman</family>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Update when exists</string>
         </property>
        </widget>
       </item>
@@ -280,12 +193,12 @@ p, li { white-space: pre-wrap; }
          </font>
         </property>
         <property name="text">
-         <string>Insert to DB</string>
+         <string>Insert</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_Check_Cookie">
+       <widget class="QPushButton" name="pushButton_Read">
         <property name="maximumSize">
          <size>
           <width>100</width>
@@ -301,7 +214,7 @@ p, li { white-space: pre-wrap; }
          </font>
         </property>
         <property name="text">
-         <string>Check Cookie</string>
+         <string>Read</string>
         </property>
        </widget>
       </item>
@@ -318,26 +231,40 @@ p, li { white-space: pre-wrap; }
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuConfigs">
+    <property name="title">
+     <string>Setting</string>
+    </property>
+    <addaction name="actionServer"/>
+   </widget>
+   <widget class="QMenu" name="menuTool">
+    <property name="title">
+     <string>Tool</string>
+    </property>
+    <addaction name="actionProxy_manager"/>
+   </widget>
+   <addaction name="menuConfigs"/>
+   <addaction name="menuTool"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionConfig">
+  <action name="actionServer">
    <property name="text">
-    <string>Config</string>
+    <string>Configs Authentication</string>
    </property>
   </action>
-  <action name="actionProxy_Manager">
+  <action name="actionImport_Cookies">
    <property name="text">
-    <string>Proxy Manager</string>
+    <string>Import Cookies</string>
    </property>
   </action>
-  <action name="actionFacebook_Account_Manager">
+  <action name="actionFacebook_Manager">
    <property name="text">
     <string>Facebook Account Manager</string>
    </property>
   </action>
-  <action name="actionImport_proxy">
+  <action name="actionProxy_manager">
    <property name="text">
-    <string>Import proxy</string>
+    <string>Proxy manager</string>
    </property>
   </action>
  </widget>
