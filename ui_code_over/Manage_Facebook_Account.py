@@ -89,11 +89,12 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         self.window.show()
 
     def import_cookie(self):
+        self.import_cookie_window = QMainWindow()
         import_cookie = Import_Cookies_Over()
-        import_cookie.setupUi(self.window)
+        import_cookie.setupUi(self.import_cookie_window)
         import_cookie.set_Manager_Facebook_Account_excel(
             Ui_Manage_Facebook_Account_Over())
-        self.window.show()
+        self.import_cookie_window.show()
 
     def reset_filter(self):
         self.checkBox_filter_name.setChecked(False)
@@ -194,7 +195,7 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
                     self.data[key] = []
                 self.data[key].append(str(account[key]))
         qtable_utils.setData(self.tableWidget_list_account, data=self.data)
-        
+
         if self.comboBox_filter_state.count() <= 0:
             self.comboBox_filter_state.addItems(list_state.keys())
         if self.list_statistics_state_child:

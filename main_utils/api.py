@@ -395,6 +395,81 @@ def get_list_facebook_account() -> (Tuple[define.ResultType, List[Facebook_Accou
         return define.ResultBase.ERROR_UNKNOW, error.get_error_mess_in_ex(ex)
 
 
+def uninstall_proxy(user_code: str, list_uids: List[str] = None, is_disable: bool = None):
+    login()
+    configs = Server_Configs()
+    ip = configs.ip
+    port = configs.port
+    s_key = configs.s_key
+    token = configs.token
+    code = configs.code
+    api = "uninstall_proxy"
+    data = {
+        "user_code": user_code,
+        "list_uids": list_uids,
+        "is_disable": is_disable
+    }
+
+    url = f"http://{ip}:{port}/{api}"
+
+    header = {
+        "Authorization": token,
+        "s-key": s_key
+    }
+    try:
+        res = requests.put(url, json=data, headers=header)
+        if res.status_code == 401:
+            return define.ResultBase.THE_TOKEN_IS_EXPIRE, None
+        if res.status_code == 403:
+            return define.ResultBase.PERMISSION_DENIED, None
+        if res.status_code != 200:
+            return define.ResultBase.ERROR_UNKNOW, None
+        return define.ResultBase.OK, res.json().get("data")
+
+    except requests.exceptions.Timeout as ex:
+        return define.ResultBase.SERVER_TIMEOUT, None
+    except Exception as ex:
+        return define.ResultBase.ERROR_UNKNOW, None
+
+
+def install_proxy(user_code: str, list_uids: List[str] = None, is_disable: bool = None) -> (Tuple[define.ResultType, List[dict] | str]):
+    login()
+    configs = Server_Configs()
+    ip = configs.ip
+    port = configs.port
+    s_key = configs.s_key
+    token = configs.token
+    code = configs.code
+    api = "install_proxy_random"
+    data = {
+        "user_code": user_code,
+        "list_uids": list_uids,
+        "is_disable": is_disable
+    }
+
+    url = f"http://{ip}:{port}/{api}"
+
+    header = {
+        "Authorization": token,
+        "s-key": s_key
+    }
+    try:
+        res = requests.put(url, json=data, headers=header)
+        if res.status_code == 401:
+            return define.ResultBase.THE_TOKEN_IS_EXPIRE, res.text
+        if res.status_code == 403:
+            return define.ResultBase.PERMISSION_DENIED,  res.text
+        if res.status_code != 200:
+            return define.ResultBase.ERROR_UNKNOW,  res.text
+
+        return define.ResultBase.OK, res.json().get("data")
+
+    except requests.exceptions.Timeout as ex:
+        return define.ResultBase.SERVER_TIMEOUT, None
+    except Exception as ex:
+        return define.ResultBase.ERROR_UNKNOW, None
+
+
 def insert_cookie(cookies: dict, is_update: bool, upsert: bool = True) -> (define.ResultType):
     login()
     configs = Server_Configs()

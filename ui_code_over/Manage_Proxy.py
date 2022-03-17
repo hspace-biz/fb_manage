@@ -1,4 +1,5 @@
 from re import S
+from tkinter import Widget
 from typing import List
 
 from main_utils import qtable_utils
@@ -11,6 +12,7 @@ from ui_code_raw.Proxy_Manager import Ui_MainWindow_Proxy_Manager
 
 from ui_code_over.Config_Window_Over import Ui_Config_Over
 from ui_code_over.Import_Proxy_Over import Ui_ImportProxy_over
+from ui_code_over.Install_Proxy_Over import Ui_Form_Install_Proxy
 
 
 class Ui_Proxy_Manager_Over(Ui_MainWindow_Proxy_Manager):
@@ -40,6 +42,15 @@ class Ui_Proxy_Manager_Over(Ui_MainWindow_Proxy_Manager):
         self.checkBox_user_name.toggled[bool].connect(self.filter)
         self.checkBox_facebook_id.toggled[bool].connect(self.filter)
         self.checkBox_facebook_name.toggled[bool].connect(self.filter)
+
+        self.pushButton_install_proxy.clicked[bool].connect(
+            self.open_install_proxy)
+
+    def open_install_proxy(self):
+        self.install_proxy_windows = QWidget()
+        self.install_proxy = Ui_Form_Install_Proxy()
+        self.install_proxy.setupUi(self.install_proxy_windows)
+        self.install_proxy_windows.show()
 
     def filter(self):
         list_data = []

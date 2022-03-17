@@ -30,7 +30,6 @@ class Import_Cookies_Over(Ui_Import_Cookie):
         self._Manager_Facebook_Account_excel = window
 
     def open_manager_Facebook_Account_excel(self):
-        print("======================")
         self._Manager_Facebook_Account_excel.setupUi(self.MainWindow)
         self.MainWindow.show()
 
