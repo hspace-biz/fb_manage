@@ -108,14 +108,12 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         options = {
             'proxy': {
                 'https': f'https://{proxy.user_name}:{proxy.password}@{proxy.ip}:{proxy.port}',
-            },
-            'ca_cert': f'{DATA_FOLDER}/ca.crt',
-            'ca_key': f'{DATA_FOLDER}/ca.key'
+            }
         }
         opts = Options()
         opts.add_argument(
             "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36")
-        opts.add_argument('--ignore-certificate-errors')
+        # opts.add_argument('--ignore-certificate-errors')
 
         self.driver = webdriver.Chrome(
             ChromeDriverManager().install(), seleniumwire_options=options, chrome_options=opts)
