@@ -5,6 +5,7 @@ from tkinter import Widget
 from typing import List
 
 import PyQt6
+from configs import DATA_FOLDER
 from main_utils import qtable_utils
 from main_utils.api import (Facebook_Account, get_all_normal_user,
                             get_list_facebook_account, get_list_proxy, login)
@@ -107,11 +108,15 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         options = {
             'proxy': {
                 'https': f'https://{proxy.user_name}:{proxy.password}@{proxy.ip}:{proxy.port}',
-            }
+            },
+            'ca_cert': f'{DATA_FOLDER}/ca.crt',
+            'ca_key': f'{DATA_FOLDER}/ca.key'
         }
         opts = Options()
         opts.add_argument(
             "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36")
+        opts.add_argument('--ignore-certificate-errors')
+
         self.driver = webdriver.Chrome(
             ChromeDriverManager().install(), seleniumwire_options=options, chrome_options=opts)
 
@@ -280,7 +285,6 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
                         list_state[str(account[key])] = 0
                     list_state[str(account[key])] += 1
                     total += 1
-                    print(account.get(key))
 
                 if not self.data.get(key):
                     self.data[key] = []

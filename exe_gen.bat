@@ -1,0 +1,1 @@
+pyinstaller --add-data ca.crt;seleniumwire --add-data ca.key;seleniumwire --onefile fb_manage.py
