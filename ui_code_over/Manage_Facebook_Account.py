@@ -1,16 +1,22 @@
 
+import threading
+from threading import Thread
 from tkinter import Widget
 from typing import List
 
 import PyQt6
 from main_utils import qtable_utils
 from main_utils.api import (Facebook_Account, get_all_normal_user,
-                            get_list_facebook_account, login)
+                            get_list_facebook_account, get_list_proxy, login)
 from main_utils.define import ResultBase
 from main_utils.str_utils import remove_accent
 from PyQt6.QtWidgets import (QLabel, QMainWindow, QTableWidget,
                              QTableWidgetItem, QWidget)
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.proxy import Proxy, ProxyType
+from seleniumwire import webdriver
 from ui_code_raw.Manage_Facebook_Account import Ui_Manage_Facebook_Account
+from webdriver_manager.chrome import ChromeDriverManager
 
 from ui_code_over.Config_Window_Over import Ui_Config_Over
 from ui_code_over.Import_Cookies_Over import Import_Cookies_Over
@@ -47,6 +53,9 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
             lambda x: self.reset_filter())
         self.list_statistics_state_child = None
 
+        self.list_account = []
+        self.list_proxy = []
+
         self.load_data()
         self.lineEdit_filter_name.textChanged.connect(self.filter)
         self.lineEdit_filter_user_code.textChanged.connect(self.filter)
@@ -60,6 +69,69 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         self.pushButton_remove_permissions.clicked[bool].connect(
             self.open_remove_permission
         )
+        self.pushButton_login.clicked.connect(self.login)
+
+        self.driver = None
+        self.tableWidget_list_account.clicked.connect(self.detect_login)
+        self.pushButton_login.setEnabled(False)
+
+    def detect_login(self):
+        indexs = self.tableWidget_list_account.selectedIndexes()
+        if len(indexs) <= 0:
+            self.pushButton_login.setEnabled(False)
+            return
+        uid = self.list_account[indexs[0].row()].uid
+        _proxy = None
+        for proxy in self.list_proxy:
+            if proxy.facebook_uid == uid:
+                _proxy = proxy
+                break
+        if _proxy is None:
+            self.pushButton_login.setEnabled(False)
+            return
+        self.pushButton_login.setEnabled(True)
+
+    def __login__(self):
+        indexs = self.tableWidget_list_account.selectedIndexes()
+        if len(indexs) <= 0:
+            return
+        cookies = self.list_account[indexs[0].row()].cookies
+        uid = self.list_account[indexs[0].row()].uid
+        _proxy = None
+        for proxy in self.list_proxy:
+            if proxy.facebook_uid == uid:
+                _proxy = proxy
+                break
+        if _proxy is None:
+            return
+        options = {
+            'proxy': {
+                'https': f'https://{proxy.user_name}:{proxy.password}@{proxy.ip}:{proxy.port}',
+            }
+        }
+        opts = Options()
+        opts.add_argument(
+            "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36")
+        self.driver = webdriver.Chrome(
+            ChromeDriverManager().install(), seleniumwire_options=options, chrome_options=opts)
+
+        self.driver.get("https://mbasic.facebook.com")
+
+        for cookie in cookies:
+            self.driver.add_cookie(
+                {"name": cookie.get("name"), "value": cookie.get("value")})
+
+        self.driver.get("https://mbasic.facebook.com")
+
+    def login(self):
+        if self.driver:
+            try:
+                self.driver.close()
+                self.driver.quit()
+            except:
+                pass
+        self.login_thread = threading.Thread(target=self.__login__)
+        self.login_thread.start()
 
     def open_remove_permission(self):
         self.remove_permission_windows = QWidget()
@@ -175,11 +247,29 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
             self.comboBox_filter_state.clear()
             self.facebook_accounts = data
             facebook_accounts = data
+
+            result, list_proxy = get_list_proxy()
+            if result.is_ok:
+                pass
+            else:
+                self.label_result_api.setText(result.msg+": "+str(list_proxy))
+                return
+            self.list_proxy = list_proxy
+            self.list_account = [account for account in data]
+            for account in self.list_account:
+                uid = account.uid
+                account.has_a_proxy = False
+                for proxy in self.list_proxy:
+                    if proxy.facebook_uid == uid:
+                        account.has_a_proxy = True
+                        break
+
         self.data = {}
         list_state = {"": -1}
 
         self.tableWidget_list_account.clear()
         total = 0
+
         for account in facebook_accounts:
             account = account.__dict__
             for key in account:
@@ -190,6 +280,7 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
                         list_state[str(account[key])] = 0
                     list_state[str(account[key])] += 1
                     total += 1
+                    print(account.get(key))
 
                 if not self.data.get(key):
                     self.data[key] = []

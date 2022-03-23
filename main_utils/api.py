@@ -20,6 +20,7 @@ class Facebook_Account:
         self.last_action = data.get("last_action")
         self.last_time_action = data.get("last_time_action")
         self.cookies = data.get("cookies")
+        self.has_a_proxy = None
 
 
 class Proxy:

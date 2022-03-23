@@ -9,3 +9,4 @@ pyuic6 ./ui/Proxy_Manager.ui -o ./ui_code_raw/Proxy_Manager.py
 pyuic6 ./ui/Share_Permission.ui -o ./ui_code_raw/Share_Permission.py
 pyuic6 ./ui/Remove_Permission.ui -o ./ui_code_raw/Remove_Permission.py
 pyuic6 ./ui/Install_Proxy.ui -o ./ui_code_raw/Install_Proxy.py
+pyuic6 ./ui/LoginFacebook.ui -o ./ui_code_raw/LoginFacebook.py

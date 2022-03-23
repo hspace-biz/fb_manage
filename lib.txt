@@ -1,3 +1,7 @@
 PyQt6
 pycryptodome
 requests
+PyQt6-WebEngine
+selenium-wire
+selenium
+webdriver-manager
