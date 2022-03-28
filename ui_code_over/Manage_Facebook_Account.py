@@ -41,9 +41,7 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         self.actionImport_Cookie.triggered[bool].connect(
             self.import_cookie
         )
-        self.actionConfigs_Authentication.triggered[bool].connect(
-            self.import_cookie
-        )
+
         self.actionProxy_Manager.triggered[bool].connect(
             self.open_manage_proxy)
 
