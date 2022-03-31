@@ -73,13 +73,19 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         self.driver = None
         self.tableWidget_list_account.clicked.connect(self.detect_login)
         self.pushButton_login.setEnabled(False)
+        self.current_list_fb_account = None
 
     def detect_login(self):
         indexs = self.tableWidget_list_account.selectedIndexes()
+
         if len(indexs) <= 0:
             self.pushButton_login.setEnabled(False)
             return
-        uid = self.list_account[indexs[0].row()].uid
+        if self.current_list_fb_account is None:
+            self.pushButton_login.setEnabled(False)
+            return
+        uid = self.current_list_fb_account[indexs[0].row()].uid
+        print(uid)
         _proxy = None
         for proxy in self.list_proxy:
             if proxy.facebook_uid == uid:
@@ -91,11 +97,14 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         self.pushButton_login.setEnabled(True)
 
     def __login__(self):
+        if self.current_list_fb_account is None:
+            self.pushButton_login.setEnabled(False)
+            return
         indexs = self.tableWidget_list_account.selectedIndexes()
         if len(indexs) <= 0:
             return
-        cookies = self.list_account[indexs[0].row()].cookies
-        uid = self.list_account[indexs[0].row()].uid
+        cookies = self.current_list_fb_account[indexs[0].row()].cookies
+        uid = self.current_list_fb_account[indexs[0].row()].uid
         _proxy = None
         for proxy in self.list_proxy:
             if proxy.facebook_uid == uid:
@@ -270,7 +279,7 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
 
         self.tableWidget_list_account.clear()
         total = 0
-
+        self.current_list_fb_account = facebook_accounts
         for account in facebook_accounts:
             account = account.__dict__
             for key in account:
