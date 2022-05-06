@@ -14,6 +14,7 @@ from main_utils.str_utils import remove_accent
 from PyQt6.QtWidgets import (QLabel, QMainWindow, QTableWidget,
                              QTableWidgetItem, QWidget)
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.proxy import Proxy, ProxyType
 from seleniumwire import webdriver
 from ui_code_raw.Manage_Facebook_Account import Ui_Manage_Facebook_Account
@@ -63,6 +64,7 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         self.checkBox_filter_name.toggled[bool].connect(self.filter)
         self.checkBox_filter_uid.toggled[bool].connect(self.filter)
         self.checkBox_filter_state.toggled[bool].connect(self.filter)
+
         self.pushButton_share_permissions.clicked[bool].connect(
             self.open_share_permission)
         self.pushButton_remove_permissions.clicked[bool].connect(
@@ -74,6 +76,7 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         self.tableWidget_list_account.clicked.connect(self.detect_login)
         self.pushButton_login.setEnabled(False)
         self.current_list_fb_account = None
+        self.load_data()
 
     def detect_login(self):
         indexs = self.tableWidget_list_account.selectedIndexes()
@@ -120,24 +123,27 @@ class Ui_Manage_Facebook_Account_Over(Ui_Manage_Facebook_Account):
         opts = Options()
         opts.add_argument(
             "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36")
-        # opts.add_argument('--ignore-certificate-errors')
-
+        opts.add_argument('--ignore-certificate-errors')
+        opts.add_argument("--log-level=OFF")
+        opts.add_argument('--ignore-ssl-errors=yes')
         self.driver = webdriver.Chrome(
             ChromeDriverManager().install(), seleniumwire_options=options, chrome_options=opts)
 
-        self.driver.get("https://mbasic.facebook.com")
+        self.driver.get("https://www.facebook.com")
 
         for cookie in cookies:
             self.driver.add_cookie(
-                {"name": cookie.get("name"), "value": cookie.get("value")})
+                {"name": cookie.get("name"), "value": cookie.get("value"), "domain": ".facebook.com"})
 
-        self.driver.get("https://mbasic.facebook.com")
+        self.driver.get("https://www.facebook.com")
 
     def login(self):
         if self.driver:
             try:
-                self.driver.close()
-                self.driver.quit()
+                self.driver.manage().deleteAllCookies()
+                self.driver.get("chrome://settings/clearBrowserData")
+                self.driver.findElementByXPath(
+                    "//settings-ui").sendKeys(Keys.ENTER)
             except:
                 pass
         self.login_thread = threading.Thread(target=self.__login__)

@@ -163,7 +163,7 @@ def check_token() -> (Tuple[define.ResultType,  str]):
             "s-key": s_key
         }
 
-        res = requests.get(url, json=data, headers=header)
+        res = requests.get(url, json=data, headers=header, timeout=10)
         print(res.text)
         if res.status_code == 200:
             return define.ResultBase.OK, None
@@ -194,7 +194,7 @@ def remove_facebook_from_normal_user(data: dict) -> (Tuple[define.ResultType, Li
             "Authorization": token,
             "s-key": s_key
         }
-        res = requests.post(url, json=data, headers=header)
+        res = requests.post(url, json=data, headers=header, timeout=10)
         if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE, define.ResultBase.THE_TOKEN_IS_EXPIRE.msg
         if res.status_code == 403:
@@ -237,7 +237,7 @@ def share_facebook_from_master_user_to_normal_user(data: dict) -> (Tuple[define.
             "Authorization": token,
             "s-key": s_key
         }
-        res = requests.post(url, json=data, headers=header)
+        res = requests.post(url, json=data, headers=header, timeout=10)
         if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE, define.ResultBase.THE_TOKEN_IS_EXPIRE.msg
         if res.status_code == 403:
@@ -282,7 +282,7 @@ def get_all_normal_user() -> (Tuple[define.ResultType, List[str] | str]):
             "Authorization": token,
             "s-key": s_key
         }
-        res = requests.get(url, json=data, headers=header)
+        res = requests.get(url, json=data, headers=header, timeout=10)
         if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE, define.ResultBase.THE_TOKEN_IS_EXPIRE.msg
         if res.status_code == 403:
@@ -328,11 +328,15 @@ def get_list_proxy() -> (Tuple[define.ResultType, List[Proxy] | str]):
             "Authorization": token,
             "s-key": s_key
         }
-        res = requests.get(url, json=data, headers=header)
+        res = requests.get(url, json=data, headers=header, timeout=10)
+        print(res.text)
+        print(res.text)
+        print(res.text)
         if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE, res.text
         if res.status_code != 200:
             return define.ResultBase.ERROR_UNKNOW, res.status_code
+
         data = res.json()
         data = data.get("data")
         if data is None:
@@ -373,7 +377,7 @@ def get_list_facebook_account() -> (Tuple[define.ResultType, List[Facebook_Accou
             "Authorization": token,
             "s-key": s_key
         }
-        res = requests.get(url, json=data, headers=header)
+        res = requests.get(url, json=data, headers=header, timeout=10)
         if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE, res.text
         if res.status_code != 200:
@@ -418,7 +422,7 @@ def uninstall_proxy(user_code: str, list_uids: List[str] = None, is_disable: boo
         "s-key": s_key
     }
     try:
-        res = requests.put(url, json=data, headers=header)
+        res = requests.put(url, json=data, headers=header, timeout=10)
         if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE, None
         if res.status_code == 403:
@@ -455,7 +459,7 @@ def install_proxy(user_code: str, list_uids: List[str] = None, is_disable: bool 
         "s-key": s_key
     }
     try:
-        res = requests.put(url, json=data, headers=header)
+        res = requests.put(url, json=data, headers=header, timeout=10)
         if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE, res.text
         if res.status_code == 403:
@@ -494,7 +498,7 @@ def insert_cookie(cookies: dict, is_update: bool, upsert: bool = True) -> (defin
         "s-key": s_key
     }
     try:
-        res = requests.put(url, json=data, headers=header)
+        res = requests.put(url, json=data, headers=header, timeout=10)
         if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE
         if res.status_code == 403:
@@ -544,7 +548,7 @@ def insert_proxy(proxy: dict, is_update: bool, upsert: bool = True) -> (define.R
         "s-key": s_key
     }
     try:
-        res = requests.put(url, json=data, headers=header)
+        res = requests.put(url, json=data, headers=header, timeout=10)
         if res.status_code == 401:
             return define.ResultBase.THE_TOKEN_IS_EXPIRE
         if res.status_code == 403:
